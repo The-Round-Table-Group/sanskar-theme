@@ -1,0 +1,57 @@
+// core font setup
+a, p, span, address, table, td, th, tr,
+small, time, ol, ul, li, button, input {
+	font-family: $oswald;
+	font-size: 1rem;
+	font-weight: $regular;
+	color: $blue;
+}
+
+small { font-size: 0.875rem; }
+
+a {
+	text-decoration: none;
+	transition: $transition;
+	font-weight: $regular;
+	&:hover { transition: $transition; }
+}
+
+p {
+	margin-top: 1.2rem;
+	margin-bottom: 1.2rem;
+}
+
+// button style reset
+button {
+	appearance: none;
+	background: unset;
+	border: unset;
+	transition: 0.2s ease-out;
+
+	&:hover {
+		cursor: pointer;
+		transition: 0.2s ease-out;
+	}
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin-top: 2.15rem;
+	margin-bottom: 1.2rem;
+	font-family: $tungsten;
+	font-weight: $bold;
+	line-height: 1.2;
+	color: $blue;
+    letter-spacing: 1px;
+}
+
+h1, .h1 { font-size: fluid-text(414px, 42px, 860px, 56px); }
+h2, .h2 { font-size: fluid-text(414px, 36px, 980px, 48px); }
+h3, .h3 { font-size: fluid-text(414px, 28px, 980px, 36px); }
+h4, .h4 { font-size: fluid-text(414px, 22px, 1024px, 30px); }
+h5, .h5 { font-size: 20px; }
+h6, .h6 { font-size: 16px; }

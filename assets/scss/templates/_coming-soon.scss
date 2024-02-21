@@ -1,0 +1,280 @@
+.site-header {
+    padding: 1rem 1.2rem 7rem;
+    height: 55vh;
+    text-align: center;
+
+    @include mq(md) {
+        padding: 3rem 1.2rem 7rem;
+    }
+
+    svg {
+        max-width: 12rem;
+    }
+
+    h1 {
+        position: relative;
+        top: 27%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+        line-height: 1;
+
+        @include mq(711px) { top: 15%; }
+    }
+
+    h1 span {
+        display: block;
+        font-size: fluid-text(414px, 90px, 1024px, 170px);
+        font-family: $tungsten;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: $teal;
+        letter-spacing: 7px;
+    }
+
+    .first {
+        animation: $reveal;
+    }
+}
+
+.countdown-container {
+    position: relative;
+    height: 45vh;
+    background-color: $blue;
+    padding: 0 1.2rem 0;
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
+
+    .vertical-center {
+        position: relative;
+        top: 55%;
+        transform: translateY(-50%);
+    }
+
+    h2 {
+        text-align: center;
+        color: $white;
+        margin-top: 0;
+        margin-bottom: 3rem;
+        overflow: hidden;
+
+        span {
+            display: block;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            text-transform: uppercase;
+            animation: reveal 2.5s cubic-bezier(0.77, 0, 0.175, 1);
+            color: $white;
+        }
+    }
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-between;
+    max-width: 40rem;
+    margin: 0 auto;
+    line-height: 1.2;
+    overflow: hidden;
+}
+
+.countdown .day,
+.countdown .hour,
+.countdown .min,
+.countdown .sec {
+    text-align: center;
+    width: 6rem;
+    animation: reveal 2.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+    span { color: $white; }
+}
+
+.countdown .sec { display: none; }
+
+.countdown div {
+    .num {
+        display: block;
+        font-size: 5rem;
+        font-size: fluid-text(414px, 50px, 1024px, 80px);
+        font-weight: $bold;
+    }
+
+    .word {
+        display: block;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+}
+
+.mailing-list {
+    position: relative;
+    padding: 4rem 1.2rem;
+    text-align: center;
+
+    @include mq(lg) {
+        padding: 7.5rem 1.2rem;
+        min-height: 35rem;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        margin-top: 0;
+        @include mq(lg) { margin-top: 2.75rem; }
+    }
+
+    .aside-header {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: -4rem;
+        letter-spacing: 3px;
+        transform: translateY(-50%) rotate(-90deg);
+        margin: 0;
+        color: rgba($blue, 0.25);
+        @include mq(lg) { display: block; }
+    }
+
+    &__sign-up {
+        max-width: 50rem;
+        margin: 0 auto;
+        text-align: center;
+
+        p {
+            margin-top: 1rem;
+            margin-bottom: 3.75rem;
+            font-size: fluid-text(414px, 20px, 1024px, 24px);
+            font-weight: $regular;
+        }
+    }
+
+    label { display: none; }
+
+    input {
+        border: 2px solid $teal;
+    }
+
+    input {
+        display: block;
+        max-width: 30rem;
+        width: 100%;
+        margin: 0 auto 2rem;
+        padding: 1rem 1.25rem;
+        font-family: $oswald;
+        font-size: 1.4rem;
+    }
+
+    #gform_submit_button_1 {
+        width: 10rem;
+        padding: 1rem 1.85rem;
+        text-align: center;
+        font-size: 1.25rem;
+        background-color: $teal;
+        color: $white;
+        border-color: transparent;
+        border-top-right-radius: 28px;
+        border-bottom-left-radius: 28px;
+        transition: $transition;
+
+        &:hover {
+            cursor: pointer;
+            transition: $transition;
+            background-color: $blue;
+            border-radius: unset;
+        }
+    }
+
+    // honeypot field
+    #field_1_2 {
+        visibility: hidden;
+        width: 1px;
+        height: 1px;
+    }
+}
+
+.social-container {
+    margin: 3rem auto;
+    text-align: center;
+
+    h2 {
+        text-transform: uppercase;
+        padding-bottom: 1.75rem;
+
+        @include mq(600px) {
+            padding-bottom: 3rem;
+        }
+    }
+
+    .social-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 28rem;
+        margin: 0 auto;
+        padding: 0 1.2rem;
+        text-align: inherit;
+
+        @include mq(600px) {
+            max-width: 40rem;
+        }
+
+        &--link {
+            width: 2.75rem;
+            height: 2.75rem;
+            border: 2px solid $teal;
+            border-radius: $circle;
+            flex-shrink: 0;
+
+            @include mq(600px) {
+                width: 5rem;
+                height: 5rem;
+                border: 3px solid $teal;
+            }
+
+            span {
+                display: block;
+                margin: 0.7rem auto 0;
+                font-size: 1.2rem;
+                text-align: center;
+                transition: $transition;
+                color: $teal;
+
+                @include mq(600px) {
+                    font-size: 1.75rem;
+                    margin: 1.5rem auto 0;
+                }
+            }
+
+            &:hover {
+                background-color: $teal;
+
+                span {
+                    color: $white;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+}
+
+.attribution {
+    margin: 0 auto;
+    max-width: 40rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    text-align: center;
+
+    p, a {
+        font-size: 1.25rem;
+    }
+
+    .inline-link {
+        font-weight: $semibold;
+        white-space: nowrap;
+
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+    }
+}

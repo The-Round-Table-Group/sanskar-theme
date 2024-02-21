@@ -1,0 +1,27 @@
+/*!
+    Theme Name: Sanskar Theme
+    Author: Shane Schroll
+    Author URI: https://trt.group
+    Description: Custom theme for Sanskar Savvy.
+    Text Domain: skv
+    Version: 1.0.2
+*/
+
+// Import dependencies
+@import 'packages/normalize';       // Soft reset + browser consistencies
+@import 'packages/fonts';           // Tungsten font
+@import 'variables';                // Sitewide variables, custom mixins, custom functions
+@import 'mixins';                   // Sitewide mixins and helpers
+@import 'globals';                  // Base html/body setup, wrappers, containers
+@import 'typography';               // Sitewide typography: sizing, spacing, initial colors
+
+// Import Template Partials
+@import 'partials/navigation';      // site navigation
+@import 'partials/header';          // site header (home has different header - loaded separately)
+@import 'partials/footer';          // site footer
+
+// Import components
+@import 'components/component-loader';  // loads all components
+
+// Import templates
+@import 'templates/template-loader';    // loads all template layouts

@@ -1,0 +1,91 @@
+<header class="site-header">
+    <div>
+        {% include 'assets/media/sanskar-logo-gradient.svg' %}
+    </div>
+
+    <h1>
+        <span class="first">Sanskar Savvy</span>
+    </h1>
+</header>
+
+<div class="countdown-container">
+    <div class="vertical-center">
+        <h2><span class="h1">Get Ready</span></h2>
+        <div class="countdown" data-date="20-03-2024" data-time="12:00">
+            <div class="day"><span class="num"></span><span class="word"></span></div>
+            <div class="hour"><span class="num"></span><span class="word"></span></div>
+            <div class="min"><span class="num"></span><span class="word"></span></div>
+            <div class="sec"><span class="num"></span><span class="word"></span></div>
+        </div>
+    </div>
+</div>
+
+<div class="mailing-list">
+    <h2 class="aside-header">Stay Up To Date</h2>
+    <h2>Join Our Mailing List</h2>
+    <div class="mailing-list__sign-up">
+        <p>Be the first to know about Contests, Giveaways, and Events!</p>
+        {{ fn('do_shortcode', '[gravityform id="1" title="false" description="false"]') }}
+    </div>
+</div>
+
+<div class="social-container">
+    <h2>Follow Us!</h2>
+    <div class="social-row">
+        <a
+            class="social-row--link"
+            href="{{ options.facebook }}"
+            target="_blank"
+            rel="noopener"
+            title="Facebook | Sanskar Savvy"
+        >
+            <span class="fab fa-facebook-f"></span>
+        </a>
+
+        <a
+            class="social-row--link"
+            href="{{ options.instagram }}"
+            target="_blank"
+            rel="noopener"
+            title="Instagram | Sanskar Savvy"
+        >
+            <span class="fab fa-instagram"></span>
+        </a>
+
+        <a
+            class="social-row--link"
+            href="{{ options.twitter }}"
+            target="_blank"
+            rel="noopener"
+            title="Twitter | Sanskar Savvy"
+        >
+            <span class="fab fa-twitter"></span>
+        </a>
+
+        <a
+            class="social-row--link"
+            href="{{ options.pinterest }}"
+            target="_blank"
+            rel="noopener"
+            title="Pinterest | Sanskar Savvy"
+        >
+            <span class="fab fa-pinterest"></span>
+        </a>
+
+        <a
+            class="social-row--link"
+            href="{{ options.tiktok }}"
+            target="_blank"
+            rel="noopener"
+            title="TikTok | Sanskar Savvy"
+        >
+            <span class="fab fa-tiktok"></span>
+        </a>
+    </div>
+</div>
+
+<div class="attribution">
+    <p>
+        Designed and Developed by <a class="inline-link" href="https://trt.group" target="_blank" rel="noopener">The Round Table Group</a>.
+    </p>
+</div>

@@ -1,0 +1,24 @@
+// Theme colors
+$white: #FFF;
+$black: #000;
+$teal: #2DA58A;
+$blue: #1B4B7E;
+$brown: #C5844D;
+$gradient: linear-gradient(to right, $teal, $blue);
+
+// Fonts
+$tungsten: 'TungstenBold', sans-serif;
+$oswald: 'Oswald', sans-serif;
+
+// Weights
+$regular: 400;
+$semibold: 600;
+$bold: 700;
+
+// Consistency utilities
+$radius-small: 7px;
+$radius-medium: 12px;
+$radius-large: 20px;
+$circle: 50%;
+$transition: 0.2s ease-out;
+$global-width: 87.5rem; // 1400px
