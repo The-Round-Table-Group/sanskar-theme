@@ -37,6 +37,11 @@
     .first {
         animation: $reveal;
     }
+
+    .tagline {
+        margin-top: -2rem;
+        font-size: 2rem;
+    }
 }
 
 .countdown-container {
@@ -192,6 +197,19 @@
     }
 }
 
+.mission-statement {
+    max-width: $global-width;
+    margin: 7.5rem auto 0;
+    text-align: center;
+
+    p {
+        max-width: 50rem;
+        margin: 0 auto;
+        font-size: 1.65rem;
+        line-height: 1.75;
+    }
+}
+
 .social-container {
     margin: 3rem auto;
     text-align: center;
@@ -209,14 +227,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 28rem;
+        max-width: 25rem;
         margin: 0 auto;
         padding: 0 1.2rem;
         text-align: inherit;
-
-        @include mq(600px) {
-            max-width: 40rem;
-        }
 
         &--link {
             width: 2.75rem;

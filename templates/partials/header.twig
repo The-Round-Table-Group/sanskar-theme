@@ -6,12 +6,14 @@
     <h1>
         <span class="first">Sanskar Savvy</span>
     </h1>
+
+    <p class="tagline">Celebrate, Explore, Connect!</p>
 </header>
 
 <div class="countdown-container">
     <div class="vertical-center">
-        <h2><span class="h1">Get Ready</span></h2>
-        <div class="countdown" data-date="20-03-2024" data-time="12:00">
+        <h2><span class="h1">Coming March 2024</span></h2>
+        <div class="countdown" data-date="27-03-2024" data-time="12:00">
             <div class="day"><span class="num"></span><span class="word"></span></div>
             <div class="hour"><span class="num"></span><span class="word"></span></div>
             <div class="min"><span class="num"></span><span class="word"></span></div>
@@ -20,9 +22,13 @@
     </div>
 </div>
 
+<div class="mission-statement">
+    <p>Sanskar Savvy is a vibrant cultural hub that celebrates, explores, and connects the rich narrative of Indian American life. Our platform is much more than a source for trending news for Indian Americans; we are dedicated to the unique experiences, heritage, and aspirations of the South Asian diaspora in the North American continent, offering a curated blend of informative, relevant, and engaging content to our subscribers.</p>
+</div>
+
 <div class="mailing-list">
     <h2 class="aside-header">Stay Up To Date</h2>
-    <h2>Join Our Mailing List</h2>
+    <h2>Join Our VIP Mailing List</h2>
     <div class="mailing-list__sign-up">
         <p>Be the first to know about Contests, Giveaways, and Events!</p>
         {{ fn('do_shortcode', '[gravityform id="1" title="false" description="false"]') }}
@@ -54,6 +60,16 @@
 
         <a
             class="social-row--link"
+            href="{{ options.youtube }}"
+            target="_blank"
+            rel="noopener"
+            title="YouTube | Sanskar Savvy"
+        >
+            <span class="fab fa-youtube"></span>
+        </a>
+
+        {# <a
+            class="social-row--link"
             href="{{ options.twitter }}"
             target="_blank"
             rel="noopener"
@@ -80,7 +96,7 @@
             title="TikTok | Sanskar Savvy"
         >
             <span class="fab fa-tiktok"></span>
-        </a>
+        </a> #}
     </div>
 </div>
 
