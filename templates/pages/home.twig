@@ -1,5 +1,51 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-    {{ post.content }}
+    <div class="mission-statement">
+        <p>Sanskar Savvy is a vibrant cultural hub that celebrates, explores, and connects the rich narrative of Indian American life. Our platform is much more than a source for trending news for Indian Americans; we are dedicated to the unique experiences, heritage, and aspirations of the South Asian diaspora in the North American continent, offering a curated blend of informative, relevant, and engaging content to our subscribers.</p>
+    </div>
+
+    <div class="mailing-list">
+        <h2 class="aside-header">Stay Up To Date</h2>
+        <h2>Join Our VIP Mailing List</h2>
+        <div class="mailing-list__sign-up">
+            <p>Be the first to know about Contests, Giveaways, and Events!</p>
+            {{ fn('do_shortcode', '[gravityform id="1" title="false" description="false"]') }}
+        </div>
+    </div>
+
+    <div class="social-container">
+        <h2>Launch With Us!</h2>
+        <div class="social-row">
+            <a
+                class="social-row--link"
+                href="{{ options.facebook }}"
+                target="_blank"
+                rel="noopener"
+                title="Facebook | Sanskar Savvy"
+            >
+                <span class="fab fa-facebook-f"></span>
+            </a>
+
+            <a
+                class="social-row--link"
+                href="{{ options.instagram }}"
+                target="_blank"
+                rel="noopener"
+                title="Instagram | Sanskar Savvy"
+            >
+                <span class="fab fa-instagram"></span>
+            </a>
+
+            <a
+                class="social-row--link"
+                href="{{ options.youtube }}"
+                target="_blank"
+                rel="noopener"
+                title="YouTube | Sanskar Savvy"
+            >
+                <span class="fab fa-youtube"></span>
+            </a>
+        </div>
+    </div>
 {% endblock %}

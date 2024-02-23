@@ -51,6 +51,7 @@
 
         .copyright {
             margin: 0;
+            font-size: 1rem;
         }
 
         .policies {
@@ -72,6 +73,7 @@
             &--link {
                 border-bottom: 1px solid transparent;
                 margin-top: 0.5rem;
+                font-size: 1rem;
                 @include mq(xs) { margin-top: 0; }
 
                 &:first-of-type { margin-top: 0; }
