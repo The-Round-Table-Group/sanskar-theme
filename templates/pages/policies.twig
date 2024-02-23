@@ -1,0 +1,31 @@
+{% extends 'base.twig' %}
+
+{# https://app.termly.io/dashboard #}
+{% block content %}
+    {% if 'privacy' in get_url %}
+        {# Privacy Policy Embed #}
+        <article class="policy-embed">
+            <div name="termly-embed" data-id="9d0f5bbe-51a4-4ed3-b0e2-758dade5bb27"></div>
+        </article>
+
+    {% else if 'cookie' in get_url %}
+        {# Cookie Policy Embed #}
+        <article class="policy-embed">
+            <div name="termly-embed" data-id="36679c13-4f0d-4f4c-b588-384b61e0af2e"></div>
+        </article>
+
+    {% else if 'accessibility' in get_url %}
+        {# Accessibility Statement #}
+        <article class="policy-embed">
+            {{ options.accessibility_statement }}
+        </article>
+
+    {% else if 'terms-of-use' in get_url %}
+        <article class="policy-embed">
+            <div name="termly-embed" data-id="ba7aa50b-eb4c-4f65-a606-a9adc8075672"></div>
+        </article>
+
+    {% else %}
+        {{ post.content }}
+    {% endif %}
+{% endblock %}

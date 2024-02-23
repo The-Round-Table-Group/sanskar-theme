@@ -115,8 +115,7 @@ class SanskarSite extends Timber\Site {
 
 	// add custom post types
 	function register_post_types() {
-		// include_once( 'custom-post-types/post-type-news.php' );
-        // include_once( 'custom-post-types/post-type-event.php' );
+		include_once( 'custom-post-types/post-type-news.php' );
 	}
 
 	// remove unused items from admin menu

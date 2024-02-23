@@ -4,6 +4,38 @@
     margin: 0 auto;
     @include mq(lg) { padding: 1rem 3rem 0; }
 
+    &__branding {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        @include mq(600px) {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        svg {
+            max-width: 18rem;
+            margin-bottom: 1rem;
+            @include mq(600px) { margin-bottom: 0; }
+        }
+
+        p {
+            max-width: 12rem;
+            font-size: 18px;
+
+            a {
+                word-break: normal;
+                font-weight: $bold;
+                font-size: 18px;
+                &:hover { color: $teal; }
+            }
+        }
+    }
+
     &__policies {
         display: flex;
         flex-direction: column;
@@ -23,15 +55,26 @@
 
         .policies {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            max-width: 25rem;
+            max-width: 30rem;
             width: 100%;
             margin-top: 1rem;
+
+            @include mq(xs) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
             @include mq(md) { margin-top: 0; }
 
             &--link {
                 border-bottom: 1px solid transparent;
+                margin-top: 0.5rem;
+                @include mq(xs) { margin-top: 0; }
+
+                &:first-of-type { margin-top: 0; }
 
                 &:hover {
                     color: $teal;

@@ -1,10 +1,33 @@
 <footer class="site-footer">
+    <div class="site-footer__branding">
+        <div>
+            {% if not is_front_page %}
+                <a class="logo">
+                    {% include 'assets/media/sanskar-full-logo-gradient.svg' %}
+                </a>
+            {% else %}
+                {% include 'assets/media/sanskar-full-logo-gradient.svg' %}
+            {% endif %}
+        </div>
+
+        <p>
+            Designed and Developed by <a class="inline-link" href="https://trt.group" target="_blank" rel="noopener">The Round Table Group</a>.
+        </p>
+    </div>
+
     <div class="site-footer__policies">
         <p class="copyright">&copy; {{ site_year }} The Round Table Group. All rights reserved.</p>
         <div class="policies">
             <a class="policies--link" href="/privacy-policy">Privacy Policy</a>
             <a class="policies--link" href="/terms-of-use">Terms of Use</a>
+            <a class="policies--link" href="/cookie-policy">Cookie Policy</a>
             <a class="policies--link" href="/accessibility-statement">Accessibility Statement</a>
         </div>
     </div>
+{#
+    <div class="site-footer__optional-prefs">
+        <a href="https://app.termly.io/notify/9d0f5bbe-51a4-4ed3-b0e2-758dade5bb27">Do not sell or share my personal information</a>
+        <a class="termly-display-preferences" href="#" >Consent Preferences</a>
+    </div>
+#}
 </footer>
