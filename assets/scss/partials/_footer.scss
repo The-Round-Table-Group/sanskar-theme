@@ -1,0 +1,43 @@
+.site-footer {
+    max-width: $global-width;
+    padding: 1rem 1rem 0;
+    margin: 0 auto;
+    @include mq(lg) { padding: 1rem 3rem 0; }
+
+    &__policies {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid $blue;
+        padding: 0.5rem 0 1rem;
+
+        @include mq(md) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .copyright {
+            margin: 0;
+        }
+
+        .policies {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 25rem;
+            width: 100%;
+            margin-top: 1rem;
+            @include mq(md) { margin-top: 0; }
+
+            &--link {
+                border-bottom: 1px solid transparent;
+
+                &:hover {
+                    color: $teal;
+                    border-bottom: 1px solid $teal;
+                }
+            }
+        }
+    }
+}

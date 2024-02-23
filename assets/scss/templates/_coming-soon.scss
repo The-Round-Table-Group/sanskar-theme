@@ -222,10 +222,7 @@
         margin: 0 auto;
         padding: 0 1.2rem;
         text-align: inherit;
-
-        @include mq(md) {
-            max-width: 25rem;
-        }
+        @include mq(md) { max-width: 25rem; }
 
         &--link {
             width: 2.75rem;
