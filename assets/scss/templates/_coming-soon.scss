@@ -2,19 +2,14 @@
     padding: 0 1.2rem 7rem;
     text-align: center;
 
-    svg {
-        max-width: 9rem;
-        @include mq(md) { max-width: 12rem; }
-    }
-
     h1 {
         position: relative;
         margin: 0 auto;
         text-align: center;
-        overflow: hidden;
         line-height: 1;
-        @include mq(711px) { top: 25%; }
     }
+
+    .overflow { overflow: hidden; }
 
     h1 span {
         display: block;
@@ -29,6 +24,27 @@
 
     .first {
         animation: $reveal;
+
+        svg {
+            position: relative;
+            top: 4.5rem;
+            max-width: fluid-text(414px, 110px, 980px, 240px);
+            margin-right: -3.5rem;
+            @include mq(xs) { margin-right: -4.15rem; }
+            @include mq(500px) { margin-right: -5rem; }
+            @include mq(600px) { top: 4.25rem; }
+            @include mq(680px) { margin-right: -5.5rem; }
+
+            @include mq(sm) {
+                top: 3.75rem;
+                margin-right: -7rem;
+            }
+
+            @include mq(md) {
+                top: 3.5rem;
+                margin-right: -7.5rem;
+            }
+        }
     }
 
     .tagline {

@@ -12,6 +12,10 @@
             secWord: ' SECONDS'
         });
 
+        setTimeout( function() {
+            $('.overflow').removeClass('overflow');
+        }, 700);
+
         /**
          * Set active menu item based on URL path
         */
