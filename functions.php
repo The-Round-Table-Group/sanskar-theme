@@ -15,6 +15,7 @@ class SanskarSite extends Timber\Site {
 	function __construct() {
 		// Action Hooks //
 		add_action( 'init', [ $this, 'register_post_types' ] );
+        add_action( 'acf/init', [ $this, 'render_custom_acf_blocks' ] );
 		add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_head', [ $this, 'admin_head_css' ] );
@@ -22,9 +23,9 @@ class SanskarSite extends Timber\Site {
 		add_action( 'wp_default_scripts', [ $this, 'remove_jqmigrate' ] );
 
 		// Filter Hooks //
+        add_filter( 'block_categories', [ $this, 'skv_block_category' ], 10, 2 );
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
-		add_filter( 'admin_footer_text', [ $this, 'admin_footer_white_label' ] );
 
 		parent::__construct();
 	}
@@ -43,24 +44,20 @@ class SanskarSite extends Timber\Site {
 		<?php
 	}
 
-	// admin footer white label
-	function admin_footer_white_label() {
-		echo '
-		<span id="footer-thankyou">Developed by
-            <a href="https://trt.group" target="_blank" rel="noreferrer">The Round Table Group</a> for Kash Patel Productions.
-		</span>';
-	}
-
 	// enqueue styles & scripts
 	function enqueue_scripts() {
 		$version = filemtime( get_stylesheet_directory() . '/style.css' );
-		wp_enqueue_style( 'dd-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
-        wp_enqueue_script( 'countdown-js', get_template_directory_uri() . '/assets/js/packages/countdown.js', [], '1.0.0' );
-        wp_enqueue_script( 'dd-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery', 'countdown-js'], $version );
+		wp_enqueue_style( 'skv-css', get_stylesheet_directory_uri() . '/style.css', [], $version );
+        wp_enqueue_script( 'skv-js', get_template_directory_uri() . '/assets/js/site-dist.js', ['jquery'], $version );
 
         // remove inline wp styles from frontend
         if ( ! is_admin() ) {
             wp_dequeue_style( 'global-styles' );
+        }
+
+        // only load block editor styles in admin
+        if ( is_admin() ) {
+            wp_enqueue_style( 'skv-block-css', get_stylesheet_directory_uri() . '/block-editor-styles.css', [], $version );
         }
 	}
 
@@ -75,13 +72,27 @@ class SanskarSite extends Timber\Site {
 		}
 	}
 
+    // registers and renders our custom acf blocks
+	function render_custom_acf_blocks() {
+		require 'custom-block-functions.php';
+	}
+
+    // creates a custom category for our theme-specific blocks
+	function skv_block_category( $categories, $post ) {
+		return array_merge(
+			$categories, [[
+                'slug'  => 'skv-blocks',
+                'title' => 'Custom Blocks'
+			]]
+		);
+	}
+
 	// custom context helper functions
 	function add_to_context( $context ) {
 		$context['site']           	= $this;
 		$context['date'] 			= date('F j, Y');
 		$context['date_year']      	= date('Y');
 		$context['is_front_page']	= is_front_page();
-		$context['is_404'] 	    	= is_404();
         $context['is_single']       = is_single();
         $context['options']         = get_fields('option');
         $context['get_url']         = $_SERVER['REQUEST_URI'];
@@ -137,7 +148,7 @@ new SanskarSite();
 // Remove gravity forms styles
 add_filter( 'gform_disable_css', '__return_true' );
 
-// move our ACF Options Page below the Dashboard tab
+// move ACF Options Page below the Dashboard tab
 function custom_menu_order( $menu_ord ) {
 	if( ! $menu_ord ) {
 		return true;

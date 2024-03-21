@@ -1,2 +1,2 @@
-!function(o){o(document).ready((function(){new countdown({target:".countdown",dayWord:" DAYS",hourWord:" HOURS",minWord:" MINUTES",secWord:" SECONDS"});setTimeout((function(){o(".overflow").removeClass("overflow")}),700)}))}(jQuery);
+jQuery(document).ready((function(){}));
 //# sourceMappingURL=site-dist.js.map
