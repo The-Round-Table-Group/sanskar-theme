@@ -3,26 +3,27 @@
 {# https://app.termly.io/dashboard #}
 {% block content %}
     {% if 'privacy' in get_url %}
-        {# Privacy Policy Embed #}
-        <article class="policy-embed">
+        {# Privacy Policy #}
+        <article class="policy-wrapper">
             <div name="termly-embed" data-id="9d0f5bbe-51a4-4ed3-b0e2-758dade5bb27"></div>
         </article>
 
     {% elseif 'cookie' in get_url %}
-        {# Cookie Policy Embed #}
-        <article class="policy-embed">
+        {# Cookie Policy #}
+        <article class="policy-wrapper">
             <div name="termly-embed" data-id="36679c13-4f0d-4f4c-b588-384b61e0af2e"></div>
         </article>
 
     {% elseif 'accessibility' in get_url %}
         {# Accessibility Statement #}
-        <article class="policy-embed">
+        <article class="policy-wrapper">
             <h2>{{ post.title }}</h2>
             {{ post.content }}
         </article>
 
     {% elseif 'terms' in get_url %}
-        <article class="policy-embed">
+        {# Terms of Use #}
+        <article class="policy-wrapper">
             <div name="termly-embed" data-id="ba7aa50b-eb4c-4f65-a606-a9adc8075672"></div>
         </article>
 
