@@ -5,7 +5,9 @@
 		<meta http-equiv="content-language" content="en-us" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="{{ post.seo_description }}" />
+
+        {# global_seo_description #}
+
 
 		<title>{{ site.name }} | {{ post.title }}</title>
 
@@ -16,23 +18,26 @@
 
 		{{ fn('wp_head') }}
 
-        {# Open Graph Data (Social + SERPS) #}
-        {% if post.seo_title %}
-            <meta property="og:title" content="{{ post.seo_title }}">
-        {% else %}
-            <meta property="og:title" content="{{ post.title }}">
+        {# Open Graph Data #}
+        {% if post.title %}
+            <meta property="og:title" content="{{ post.title }}" />
         {% endif %}
 
-        {% if post.seo_image %}
-            <meta property="og:image" content="{{ post.seo_image.url }}">
-        {% else %}
-            <meta property="og:image" content="{{ post.thumbnail.url }}">
+        {% if post.thumbnail.url %}
+            <meta property="og:image" content="{{ post.thumbnail.url }}" />
         {% endif %}
 
-        <meta property="og:description" content="{{ post.seo_description }}">
-        <meta property="og:locale" content="en_US.utf-8">
-        <meta property="og:url" content="{{ post.link }}">
-        <meta property="og:type" content="website">
+        {% if post.seo_description %}
+            <meta name="description" content="{{ post.seo_description }}" />
+            <meta property="og:description" content="{{ post.seo_description }}" />
+        {% else %}
+            <meta name="description" content="{{ post.global_seo_description }}" />
+            <meta property="og:description" content="{{ post.global_seo_description }}" />
+        {% endif %}
+
+        <meta property="og:locale" content="en_US.utf-8" />
+        <meta property="og:url" content="{{ post.link }}" />
+        <meta property="og:type" content="website" />
 
         {# News links may appear on multiple pages #}
         {% if fn('is_singular', 'news') %}
@@ -42,6 +47,7 @@
         {# Sitemap #}
         <link rel="sitemap" type="application/xml" href="/wp-sitemap.xml" />
 
+        {# Fonts #}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap">
@@ -56,8 +62,8 @@
             {% block content %}{% endblock %}
         </section>
 
-        {% include 'partials/footer.twig' %}
-        {% include 'external-scripts.twig' %}
+        {# {% include 'partials/footer.twig' %}
+        {% include 'external-scripts.twig' %} #}
 		{{ fn('wp_footer') }}
 	</body>
 </html>

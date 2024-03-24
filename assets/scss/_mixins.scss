@@ -24,10 +24,3 @@
 	$return: clamp(#{$min-font-size}, #{$y-intersect} + #{$slope} * 100vw, #{$max-font-size});
 	@return $return;
 }
-
-// reveal animation
-$reveal: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-@keyframes reveal {
-    0% { transform: translate(0, 130%); }
-    100% { transform: translate(0, 0); }
-}
