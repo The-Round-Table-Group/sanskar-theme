@@ -1,3 +1,14 @@
-<div class="site-header__featured-post"></div>
-
-{# featured post #}
+<article class="site-header__featured-post">
+    {% set count = 0 %}
+    {% for term in featured_news %}
+        {% if term.name == 'Featured' %}
+            {% for post in term.posts %}
+                {% if count == 0 %}
+                    <h1 class="featured-title">{{ post.title }}</h1>
+                    <div class="featured-content"></div>
+                {% endif %}
+                {% set count = count + 1 %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</article>
