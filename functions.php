@@ -97,6 +97,33 @@ class SanskarSite extends Timber\Site {
         $context['options']         = get_fields('option');
         $context['get_url']         = $_SERVER['REQUEST_URI'];
 
+        // block contest
+        $context['contest_block'] = Timber::get_posts([
+            'post_type'      => 'contest',
+            'posts_per_page' => 3,
+            'post_status'    => 'publish',
+            'order'          => 'DESC',
+            'orderby'        => 'date'
+        ]);
+
+        // block playlist
+        $context['playlist_block'] = Timber::get_posts([
+            'post_type'      => 'playlist',
+            'posts_per_page' => 3,
+            'post_status'    => 'publish',
+            'order'          => 'DESC',
+            'orderby'        => 'date'
+        ]);
+
+        // block news
+        $context['news_block'] = Timber::get_posts([
+            'post_type'      => 'news',
+            'posts_per_page' => 3,
+            'post_status'    => 'publish',
+            'order'          => 'DESC',
+            'orderby'        => 'date'
+        ]);
+
 		return $context;
 	}
 
