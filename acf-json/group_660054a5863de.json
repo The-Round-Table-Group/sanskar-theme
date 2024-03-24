@@ -1,14 +1,14 @@
 {
-    "key": "group_660051572c4a5",
-    "title": "Options - Global SEO Description",
+    "key": "group_660054a5863de",
+    "title": "Posts - SEO Description",
     "fields": [
         {
-            "key": "field_6600515878467",
-            "label": "Global SEO Description",
-            "name": "global_seo_description",
+            "key": "field_660054a549c7a",
+            "label": "SEO Description",
+            "name": "seo_description",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Optional, curated seo description.<br\/>\r\nIf left empty, the global seo description will be used.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -18,7 +18,7 @@
             },
             "default_value": "",
             "maxlength": "",
-            "rows": "",
+            "rows": 3,
             "placeholder": "",
             "new_lines": ""
         }
@@ -26,13 +26,13 @@
     "location": [
         [
             {
-                "param": "options_page",
-                "operator": "==",
-                "value": "site-options"
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
             }
         ]
     ],
-    "menu_order": 7,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -41,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711297820
+    "modified": 1711300296
 }

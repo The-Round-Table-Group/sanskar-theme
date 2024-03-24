@@ -115,6 +115,13 @@ class SanskarSite extends Timber\Site {
                 'redirect'   => false
 			]);
 
+            // Menus
+			$child = acf_add_options_sub_page([
+				'page_title'  => __('Menus'),
+				'menu_title'  => __('Menus'),
+				'parent_slug' => $parent['menu_slug'],
+			]);
+
             // Social Media Links
 			$child = acf_add_options_sub_page([
 				'page_title'  => __('Social Media'),
@@ -126,7 +133,9 @@ class SanskarSite extends Timber\Site {
 
 	// add custom post types
 	function register_post_types() {
-		include_once( 'custom-post-types/post-type-news.php' );
+		include_once( 'custom-post-types/post-type-contest.php' );
+        include_once( 'custom-post-types/post-type-playlist.php' );
+        include_once( 'custom-post-types/post-type-news.php' );
 	}
 
 	// remove unused items from admin menu

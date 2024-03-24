@@ -56,14 +56,21 @@
 
 	<body data-template="base.twig" class="{{ body_class }}">
         {% include 'partials/navigation.twig' %}
-        {% include 'partials/header.twig' %}
+
+        <header class="site-header">
+            {% if is_front_page %}
+                {% include 'partials/home-header.twig' %}
+            {% else %}
+                {% include 'partials/post-header.twig' %}
+            {% endif %}
+        </header>
 
         <section class="main-post-wrapper" role="main" aria-label="Main page content">
             {% block content %}{% endblock %}
         </section>
 
-        {# {% include 'partials/footer.twig' %}
-        {% include 'external-scripts.twig' %} #}
+        {% include 'partials/footer.twig' %}
+        {# {% include 'external-scripts.twig' %} #}
 		{{ fn('wp_footer') }}
 	</body>
 </html>
