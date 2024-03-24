@@ -4,8 +4,18 @@
         {% if term.name == 'Featured' %}
             {% for post in term.posts %}
                 {% if count == 0 %}
-                    <h1 class="featured-title">{{ post.title }}</h1>
-                    <div class="featured-content"></div>
+                    <div class="featured-post-wrapper">
+                        <h1 class="featured-title">{{ post.title }}</h1>
+                        <div class="featured-content">
+                            <p class="paragraph">{{ post.header_text }}</p>
+                            <div class="info">
+                                <p><strong>Author:</strong> {{ post.author.name }}</p>
+                                <p><strong>Date:</strong> {{ post.date }}</p>
+                                <p><strong>Tags:</strong> {% for term in post.terms %}<span class="term">{{ term.name }}</span>{% endfor %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{{ post.thumbnail.src }}" alt="{{ post.title }}" />
                 {% endif %}
                 {% set count = count + 1 %}
             {% endfor %}

@@ -1,16 +1,19 @@
-{# for most of the post block layouts #}
+{# post block layouts #}
 <section class="post-block">
-    {% if fields.choose_post_type == 'Contests' %}
-        {% for contest in contest_block %}
-            <a class="post-block--post" href="">{{ contest.title }}</a>
-        {% endfor %}
-    {% elseif fields.choose_post_type == 'Playlists' %}
-        {% for playlist in playlist_block %}
-            <a class="post-block--post" href="">{{ playlist.title }}</a>
-        {% endfor %}
-    {% elseif fields.choose_post_type == 'News' %}
-        {% for news in news_block %}
-            <a class="post-block--post" href="">{{ news.title }}</a>
-        {% endfor %}
-    {% endif %}
+    <h2 class="h1">{{ fields.post_block_title }}</h2>
+    <div class="post-block__post-row">
+        {% if fields.choose_post_type == 'Contests' %}
+            {% for contest in contest_block %}
+                <a class="post-card" href="">{{ contest.title }}</a>
+            {% endfor %}
+        {% elseif fields.choose_post_type == 'Playlists' %}
+            {% for playlist in playlist_block %}
+                <a class="post-card" href="">{{ playlist.title }}</a>
+            {% endfor %}
+        {% elseif fields.choose_post_type == 'News' %}
+            {% for news in news_block %}
+                <a class="post-card" href="">{{ news.title }}</a>
+            {% endfor %}
+        {% endif %}
+    </div>
 </section>

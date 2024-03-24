@@ -1,0 +1,16 @@
+.post-block {
+
+    .h1 {
+        margin-bottom: 2rem;
+    }
+
+    &__post-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .post-card {
+            border: 1px solid $blue;
+        }
+    }
+}

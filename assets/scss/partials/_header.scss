@@ -1,13 +1,79 @@
 .site-header {
     max-width: $global-width;
     padding: 1rem;
-    margin: 0 auto;
+    margin: 1.25rem auto 0;
     @include mq(lg) { padding: 1rem 3rem; }
 
     // homepage featured post
     &__featured-post {
+        .featured-post-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
 
-    }
+            @include mq(md) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .featured-title {
+            flex-shrink: 0;
+            max-width: 30rem;
+            margin: 0 auto 2rem;
+            text-align: center;
+            text-transform: uppercase;
+
+            @include mq(md) {
+                text-align: left;
+                margin: 0;
+            }
+        }
+
+        .featured-content {
+            max-width: 100%;
+            margin-left: 0;
+
+            @include mq(md) {
+                max-width: 45rem;
+                margin-left: 2rem;
+            }
+
+            .paragraph {
+                margin-top: 0;
+                margin-bottom: 2rem;
+            }
+
+            .info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+
+                p, span {
+                    font-size: 0.875rem;
+                }
+
+                p {
+                    margin-top: 0;
+                    margin-bottom: 0.75rem;
+                    &:last-of-type { margin-bottom: 0; }
+
+                    @include mq(xs) {
+                        &:last-of-type { margin-bottom: 0.75rem; }
+                    }
+
+                    span {
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+        }
+    } // __featured-post
 
     // all other pages/posts
     &__text {}

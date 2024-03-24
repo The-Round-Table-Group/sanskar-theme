@@ -21,25 +21,8 @@
             position: relative;
             font-size: 1.125rem;
             font-weight: 600;
-
-            &:before {
-                position: absolute;
-                content: '';
-                top: -0.875rem;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 7px;
-                height: 7px;
-                border-radius: $circle;
-                background-color: transparent;
-            }
-
             &:hover { color: $teal; }
-
-            &.active {
-                color: $teal;
-                &:before { background-color: $teal; }
-            }
+            &.active { color: $teal; }
         }
     }
 }

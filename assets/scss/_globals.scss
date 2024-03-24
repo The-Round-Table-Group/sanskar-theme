@@ -33,3 +33,9 @@ img {
     margin: 0 auto;
     @include mq(lg) { padding: 1rem 3rem; }
 }
+
+.term {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid $blue;
+    border-radius: $radius-large;
+}
