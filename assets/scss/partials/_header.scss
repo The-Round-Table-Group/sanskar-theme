@@ -1,0 +1,14 @@
+.site-header {
+    max-width: $global-width;
+    padding: 1rem;
+    margin: 0 auto;
+    @include mq(lg) { padding: 1rem 3rem; }
+
+    // homepage featured post
+    &__featured-post {
+
+    }
+
+    // all other pages/posts
+    &__text {}
+}

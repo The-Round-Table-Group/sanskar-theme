@@ -1,1 +1,17 @@
-<nav class="site-nav" aria-label="Main site navigation"></nav>
+<section class="nav-wrapper">
+    <div class="nav-wrapper__logo">
+        {% if not is_front_page %}
+            <a href="/">
+                {% include 'assets/media/sanskar-full-logo-gradient.svg' %}
+            </a>
+        {% else %}
+            {% include 'assets/media/sanskar-full-logo-gradient.svg' %}
+        {% endif %}
+    </div>
+
+    <nav class="nav-wrapper__menu" aria-label="Main site navigation">
+        {% for item in options.navigation %}
+            <a class="menu-link" href="{{ item.nav_link.url }}">{{ item.nav_link.title }}</a>
+        {% endfor %}
+    </nav>
+</section>

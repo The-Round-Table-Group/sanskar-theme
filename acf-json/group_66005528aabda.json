@@ -27,7 +27,7 @@
             "label": "Header Text",
             "name": "header_text",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,9 +38,9 @@
             },
             "default_value": "",
             "maxlength": "",
+            "rows": 4,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         }
     ],
     "location": [
@@ -68,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711300249
+    "modified": 1711301102
 }

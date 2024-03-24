@@ -1,0 +1,45 @@
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $global-width;
+    margin: 0 auto;
+    padding: 1rem;
+    @include mq(lg) { padding: 1rem 3rem; }
+
+    &__logo svg {
+        max-width: 15rem;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        max-width:35rem;
+        width: 100%;
+
+        .menu-link {
+            position: relative;
+            font-size: 1.125rem;
+            font-weight: 600;
+
+            &:before {
+                position: absolute;
+                content: '';
+                top: -0.875rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 7px;
+                height: 7px;
+                border-radius: $circle;
+                background-color: transparent;
+            }
+
+            &:hover { color: $teal; }
+
+            &.active {
+                color: $teal;
+                &:before { background-color: $teal; }
+            }
+        }
+    }
+}

@@ -1,2 +1,2 @@
-jQuery(document).ready((function(){}));
+!function(a){a(document).ready((function(){var n=location.pathname.split("/");""!==n[1]&&a('.menu-link[href^="https://sanskarsavvy.local/'+n[1]+'"]').addClass("active")}))}(jQuery);
 //# sourceMappingURL=site-dist.js.map

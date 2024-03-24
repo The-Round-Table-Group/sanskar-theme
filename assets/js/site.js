@@ -3,13 +3,11 @@
         /**
          * Set active menu item based on URL path
         */
+        var path = location.pathname.split('/'); // url path array
 
-        // var path = location.pathname.split('/'); // url path array
-        // var url = window.location.pathname; // full url
-        // if (path[1] !== '') {
-        //     $('.nav-menu--link[href^="/' + path[1] + '"]').addClass('active');
-        // } else {
-        //     $('.home').addClass('active');
-        // }
+        if (path[1] !== '') {
+            $('.menu-link[href^="https://sanskarsavvy.local/' + path[1] + '"]').addClass('active'); // dev
+            // $('.menu-link[href^="https://sanskarsavvy.com/' + path[1] + '"]').addClass('active'); // prod
+        }
     });
 })(jQuery);
