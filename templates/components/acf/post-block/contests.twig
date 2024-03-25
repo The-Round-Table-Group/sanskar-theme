@@ -1,0 +1,15 @@
+{% for contest in contest_block %}
+    <a class="post-card" href="{{ contest.link }}">
+        <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
+
+        <h3 class="h4">{{ contest.title }}</h3>
+
+        <p class="excerpt">{{ contest.header_text }}</p>
+
+        <p class="terms">
+            {% for term in contest.terms %}
+                <span class="term">{{ term.name }}</span>
+            {% endfor %}
+        </p>
+    </a>
+{% endfor %}

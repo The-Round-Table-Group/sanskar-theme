@@ -14,10 +14,9 @@
                 <a class="post-card" href="{{ contest.link }}">
                     <div class="date-author">
                         <time>{{ contest.date }}</time>
-                        <span>{{ contest.author.name }}</span>
                     </div>
                     <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
-                    <h3>{{ contest.title }}</h3>
+                    <h3 class="h4">{{ contest.title }}</h3>
                     <p class="excerpt">{{ contest.header_text }}</p>
                     <p class="terms">
                         {% for term in contest.terms %}
@@ -29,7 +28,14 @@
         </div>
     </section>
 
-    {# posts split column area #}
+
+
+
+    <section class="split-column"></section>
+
+
+
+
 
     <section class="post-block">
         <div class="post-block__header">
@@ -47,7 +53,7 @@
                         <span>{{ playlist.author.name }}</span>
                     </div>
                     <img src="{{ playlist.thumbnail.src }}" alt="{{ playlist.title }}" />
-                    <h3>{{ playlist.title }}</h3>
+                    <h3 class="h4">{{ playlist.title }}</h3>
                     <p class="excerpt">{{ playlist.header_text }}</p>
                     <p class="terms">
                         {% for term in playlist.terms %}
@@ -75,7 +81,7 @@
                         <span>{{ news.author.name }}</span>
                     </div>
                     <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
-                    <h3>{{ news.title }}</h3>
+                    <h3 class="h4">{{ news.title }}</h3>
                     <p class="excerpt">{{ news.header_text }}</p>
                     <p class="terms">
                         {% for term in news.terms %}

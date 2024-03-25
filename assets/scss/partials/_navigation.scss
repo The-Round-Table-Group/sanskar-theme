@@ -5,6 +5,7 @@
     max-width: $global-width;
     margin: 0 auto;
     padding: 1rem;
+    border-bottom: 1px solid $blue;
     @include mq(lg) { padding: 1rem 3rem; }
 
     &__logo svg {
