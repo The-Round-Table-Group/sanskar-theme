@@ -45,7 +45,7 @@
 
             .paragraph {
                 margin-top: 0;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
 
             .info {
@@ -59,17 +59,9 @@
                 }
 
                 p {
-                    margin-top: 0;
-                    margin-bottom: 0.75rem;
-                    &:last-of-type { margin-bottom: 0; }
-
-                    @include mq(xs) {
-                        &:last-of-type { margin-bottom: 0.75rem; }
-                    }
-
-                    span {
-                        margin-left: 0.5rem;
-                    }
+                    margin-top: 1.25rem;
+                    margin-bottom: 0;
+                    span { margin-left: 0.5rem; }
                 }
             }
         }

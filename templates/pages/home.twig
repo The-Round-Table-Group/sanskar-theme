@@ -1,5 +1,95 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-    {{ post.content }}
+    <section class="post-block">
+        <div class="post-block__header">
+            <h2 class="h1">Featured Contests</h2>
+            <a class="all-posts-link" href="/contests">
+                See All <span class="fa-solid fa-arrow-right"></span>
+            </a>
+        </div>
+
+        <div class="post-block__post-row">
+            {% for contest in contest_block %}
+                <a class="post-card" href="{{ contest.link }}">
+                    <div class="date-author">
+                        <time>{{ contest.date }}</time>
+                        <span>{{ contest.author.name }}</span>
+                    </div>
+                    <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
+                    <h3>{{ contest.title }}</h3>
+                    <p class="excerpt">{{ contest.header_text }}</p>
+                    <p class="terms">
+                        {% for term in contest.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    {# posts split column area #}
+
+    <section class="post-block">
+        <div class="post-block__header">
+            <h2 class="h1">Spotify Playlists</h2>
+            <a class="all-posts-link" href="/playlists">
+                See All <span class="fa-solid fa-arrow-right"></span>
+            </a>
+        </div>
+
+        <div class="post-block__post-row">
+            {% for playlist in playlist_block %}
+                <a class="post-card" href="{{ playlist.link }}">
+                    <div class="date-author">
+                        <time>{{ playlist.date }}</time>
+                        <span>{{ playlist.author.name }}</span>
+                    </div>
+                    <img src="{{ playlist.thumbnail.src }}" alt="{{ playlist.title }}" />
+                    <h3>{{ playlist.title }}</h3>
+                    <p class="excerpt">{{ playlist.header_text }}</p>
+                    <p class="terms">
+                        {% for term in playlist.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="post-block">
+        <div class="post-block__header">
+            <h2 class="h1">World Cup Cricket Updates</h2>
+            <a class="all-posts-link" href="/news">
+                See All <span class="fa-solid fa-arrow-right"></span>
+            </a>
+        </div>
+
+        <div class="post-block__post-row">
+            {% for news in cricket_news_updates %}
+                <a class="post-card" href="{{ news.link }}">
+                    <div class="date-author">
+                        <time>{{ news.date }}</time>
+                        <span>{{ news.author.name }}</span>
+                    </div>
+                    <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+                    <h3>{{ news.title }}</h3>
+                    <p class="excerpt">{{ news.header_text }}</p>
+                    <p class="terms">
+                        {% for term in news.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
+
+{#
+
+
+
+#}

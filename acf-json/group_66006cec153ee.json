@@ -3,6 +3,26 @@
     "title": "Post Block",
     "fields": [
         {
+            "key": "field_6600b3566cbb7",
+            "label": "Block Title",
+            "name": "block_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66006cec83250",
             "label": "Choose Post Type",
             "name": "choose_post_type",
@@ -47,5 +67,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711304067
+    "modified": 1711321962
 }

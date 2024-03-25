@@ -12,5 +12,15 @@ $context['featured_news'] = Timber::get_terms([
     'hide_empty' => false
 ]);
 
+$context['cricket_news_updates'] = Timber::get_posts([
+    'post_type'      => 'news',
+    'posts_per_page' => 3,
+    'tax_query'      => [[
+        'taxonomy' => 'news-tax',
+        'field'    => 'slug',
+        'terms'    => 'cricket-updates',
+    ]]
+]);
+
 $templates = ['pages/home.twig'];
 Timber::render( $templates, $context );

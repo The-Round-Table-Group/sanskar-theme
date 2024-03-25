@@ -1,18 +1,63 @@
 {# post block layouts #}
 <section class="post-block">
-    <h2 class="h1">{{ fields.post_block_title }}</h2>
+    <div class="post-block__header">
+        <h2 class="h1">{{ fields.block_title }}</h2>
+        <a class="all-posts-link" href="/{{ fields.choose_post_type|lower }}">
+            See All <span class="fa-solid fa-arrow-right"></span>
+        </a>
+    </div>
+
     <div class="post-block__post-row">
         {% if fields.choose_post_type == 'Contests' %}
             {% for contest in contest_block %}
-                <a class="post-card" href="">{{ contest.title }}</a>
+                <a class="post-card" href="{{ contest.link }}">
+                    <div class="date-author">
+                        <time>{{ contest.date }}</time>
+                        <span>{{ contest.author.name }}</span>
+                    </div>
+                    <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
+                    <h3>{{ contest.title }}</h3>
+                    <p class="excerpt">{{ contest.header_text }}</p>
+                    <p class="terms">
+                        {% for term in contest.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
             {% endfor %}
         {% elseif fields.choose_post_type == 'Playlists' %}
             {% for playlist in playlist_block %}
-                <a class="post-card" href="">{{ playlist.title }}</a>
+                <a class="post-card" href="{{ playlist.link }}">
+                    <div class="date-author">
+                        <time>{{ playlist.date }}</time>
+                        <span>{{ playlist.author.name }}</span>
+                    </div>
+                    <img src="{{ playlist.thumbnail.src }}" alt="{{ playlist.title }}" />
+                    <h3>{{ playlist.title }}</h3>
+                    <p class="excerpt">{{ playlist.header_text }}</p>
+                    <p class="terms">
+                        {% for term in playlist.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
             {% endfor %}
         {% elseif fields.choose_post_type == 'News' %}
             {% for news in news_block %}
-                <a class="post-card" href="">{{ news.title }}</a>
+                <a class="post-card" href="{{ news.link }}">
+                    <div class="date-author">
+                        <time>{{ news.date }}</time>
+                        <span>{{ news.author.name }}</span>
+                    </div>
+                    <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+                    <h3>{{ news.title }}</h3>
+                    <p class="excerpt">{{ news.header_text }}</p>
+                    <p class="terms">
+                        {% for term in news.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
             {% endfor %}
         {% endif %}
     </div>
