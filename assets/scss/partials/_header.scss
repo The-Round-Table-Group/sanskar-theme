@@ -27,6 +27,7 @@
             margin: 0 auto 2rem;
             text-align: center;
             text-transform: uppercase;
+            line-height: 1.1;
 
             @include mq(md) {
                 text-align: left;
@@ -68,5 +69,38 @@
     } // __featured-post
 
     // all other pages/posts
-    &__text {}
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        @include mq(md) {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            flex-shrink: 0;
+            max-width: 30rem;
+            margin: 0 auto 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1.1;
+
+            @include mq(md) {
+                text-align: left;
+                margin: 0;
+            }
+        }
+
+        p {
+            max-width: 45rem;
+            margin-top: 0;
+            margin-left: 0;
+            @include mq(md) { margin-left: 2rem; }
+        }
+    }
 }

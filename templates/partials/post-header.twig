@@ -9,3 +9,7 @@
         <p>{{ post.header_text }}</p>
     {% endif %}
 </div>
+
+{% if post.thumbnail.src %}
+    <img src="{{ post.thumbnail.src }}" alt="{{ post.title }}" />
+{% endif %}

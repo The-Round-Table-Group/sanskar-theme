@@ -18,6 +18,7 @@
 @import 'partials/navigation';      // site navigation
 @import 'partials/header';          // site header (home has different header - loaded separately)
 @import 'partials/footer';          // site footer
+@import 'partials/forms';           // sitewide forms
 
 // Import components
 @import 'components/component-loader';  // loads all components
