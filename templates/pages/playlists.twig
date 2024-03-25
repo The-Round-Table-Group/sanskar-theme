@@ -1,6 +1,34 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+    <section class="post-block">
+        <div class="post-block__page-header">
+            <p class="h4">Filter by Tag</p>
+            <div class="tag-filter">
+                {{ fn('do_shortcode', '[facetwp facet="playlist_tags"]') }}
+            </div>
+        </div>
+
+        <div class="post-block__post-row facetwp-template">
+            {% for playlist in playlists %}
+                <a class="post-card" href="{{ playlist.link }}">
+                    <div class="date-author">
+                        <time>{{ playlist.date }}</time>
+                        <span>{{ playlist.author.name }}</span>
+                    </div>
+                    <img src="{{ playlist.thumbnail.src }}" alt="{{ playlist.title }}" />
+                    <h3 class="h4">{{ playlist.title }}</h3>
+                    <p class="excerpt">{{ playlist.header_text }}</p>
+                    <p class="terms">
+                        {% for term in playlist.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
     {{ post.content }}
 {% endblock %}
 

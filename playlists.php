@@ -8,7 +8,8 @@ $context['playlists'] = Timber::get_posts([
     'post_type'      => 'playlist',
     'posts_per_page' => -1,
     'order'          => 'DESC',
-    'orderby'        => 'date'
+    'orderby'        => 'date',
+    'facetwp'        => true
 ]);
 
 $templates = ['pages/playlists.twig'];

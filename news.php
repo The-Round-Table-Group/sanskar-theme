@@ -8,7 +8,8 @@ $context['news'] = Timber::get_posts([
     'post_type'      => 'news',
     'posts_per_page' => -1,
     'order'          => 'DESC',
-    'orderby'        => 'date'
+    'orderby'        => 'date',
+    'facetwp'        => true
 ]);
 
 $templates = ['pages/news.twig'];

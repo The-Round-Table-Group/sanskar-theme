@@ -1,5 +1,32 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+    <section class="post-block">
+        <div class="post-block__page-header">
+            <p class="h4">Filter by Tag</p>
+            <div class="tag-filter">
+                {{ fn('do_shortcode', '[facetwp facet="news_tag"]') }}
+            </div>
+        </div>
+
+        <div class="post-block__post-row facetwp-template">
+            {% for news_post in news %}
+                <a class="post-card" href="{{ news_post.link }}">
+                    <div class="date-author">
+                        <time>{{ news_post.date }}</time>
+                        <span>{{ news_post.author.name }}</span>
+                    </div>
+                    <img src="{{ news_post.thumbnail.src }}" alt="{{ news_post.title }}" />
+                    <h3 class="h4">{{ news_post.title }}</h3>
+                    <p class="excerpt">{{ news_post.header_text }}</p>
+                    <p class="terms">
+                        {% for term in news_post.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
     {{ post.content }}
 {% endblock %}

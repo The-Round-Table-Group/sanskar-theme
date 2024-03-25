@@ -4,6 +4,7 @@
     padding-bottom: 2rem;
     @include mq(md) { margin: 5rem auto; }
 
+    // header for card layout
     &__header {
         display: flex;
         flex-direction: column;
@@ -42,7 +43,45 @@
                 }
             }
         }
-    }
+    } // end default header
+
+    // header for archive pages
+    &__page-header {
+        .tag-filter {
+            .facetwp-facet {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 30rem;
+                flex-wrap: wrap;
+
+                .facetwp-radio {
+                    padding: 0.2rem 0.5rem;
+                    border: 1px solid $blue;
+                    border-radius: $radius-large;
+                    background: transparent;
+                    transition: $transition;
+
+                    &:hover {
+                        background-color: $teal;
+                        border-color: $teal;
+                        transition: $transition;
+                        color: $white;
+                        span { color: $white; }
+                    }
+
+                    &.checked {
+                        background-color: $teal;
+                        border-color: $teal;
+                        color: $white;
+                        span { color: $white; }
+                    }
+                }
+
+                .facetwp-counter { display: none; }
+            }
+        } // end tag-filter
+    } // end page-header
 
     &__post-row {
         display: flex;
@@ -50,6 +89,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 2rem;
+        flex-wrap: wrap;
 
         @include mq(sm) {
             flex-direction: row;
@@ -57,9 +97,10 @@
         }
 
         .post-card {
+            flex: 1 1 22rem;
             position: relative;
-            max-width: 100%;
-            width: 100%;
+            min-width: 22rem;
+            max-width: 27rem;
             padding: 1.5rem;
             border: 1px solid $blue;
 
@@ -78,10 +119,11 @@
             img {
                 margin-top: 1rem;
                 object-fit: cover;
-                width: 100%;
-                height: 12.5rem;
-                @include mq(xs) { height: 15rem; }
-                @include mq(lg) { height: 18rem; }
+                width: 385px;
+                height: 200px;
+                @include mq(xs) { height: 240px; }
+                @include mq(lg) { height: 325px; }
+                @include mq(1281px) { height: 385px; }
             }
 
             h3 { margin-top: 1rem; }
