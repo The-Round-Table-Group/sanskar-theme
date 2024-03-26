@@ -117,12 +117,7 @@
 
             img {
                 margin-top: 1rem;
-                object-fit: cover;
                 width: 385px;
-                height: 200px;
-                @include mq(xs) { height: 240px; }
-                @include mq(lg) { height: 325px; }
-                @include mq(1281px) { height: 385px; }
             }
 
             h3 { margin-top: 1rem; }

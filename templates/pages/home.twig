@@ -1,6 +1,7 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+    {# Featured Contests #}
     <section class="post-block">
         <div class="post-block__header">
             <h2 class="h1">Featured Contests</h2>
@@ -15,9 +16,9 @@
                     <div class="date-author">
                         <time>{{ contest.date }}</time>
                     </div>
-                    <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
+                    <img src="{{ contest.card_image.url }}" alt="{{ contest.title }}" />
                     <h3 class="h4">{{ contest.title }}</h3>
-                    <p class="excerpt">{{ contest.excerpt }}</p>
+                    <p class="excerpt">{{ contest.excerpt.read_more('') }}</p>
                     <p class="terms">
                         {% for term in contest.terms %}
                             <span class="term">{{ term.name }}</span>
@@ -37,6 +38,7 @@
 
 
 
+    {# Featured Spotify Playlists #}
     <section class="post-block">
         <div class="post-block__header">
             <h2 class="h1">Spotify Playlists</h2>
@@ -52,9 +54,9 @@
                         <time>{{ playlist.date }}</time>
                         <span>{{ playlist.author.name }}</span>
                     </div>
-                    <img src="{{ playlist.thumbnail.src }}" alt="{{ playlist.title }}" />
+                    <img src="{{ playlist.card_image.url }}" alt="{{ playlist.title }}" />
                     <h3 class="h4">{{ playlist.title }}</h3>
-                    <p class="excerpt">{{ playlist.excerpt }}</p>
+                    <p class="excerpt">{{ playlist.excerpt.read_more('') }}</p>
                     <p class="terms">
                         {% for term in playlist.terms %}
                             <span class="term">{{ term.name }}</span>
@@ -65,6 +67,7 @@
         </div>
     </section>
 
+    {# Featured Cricket Updates #}
     <section class="post-block">
         <div class="post-block__header">
             <h2 class="h1">World Cup Cricket Updates</h2>
@@ -80,9 +83,9 @@
                         <time>{{ news.date }}</time>
                         <span>{{ news.author.name }}</span>
                     </div>
-                    <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+                    <img src="{{ news.card_image.url }}" alt="{{ news.title }}" />
                     <h3 class="h4">{{ news.title }}</h3>
-                    <p class="excerpt">{{ news.excerpt }}</p>
+                    <p class="excerpt">{{ news.excerpt.read_more('') }}</p>
                     <p class="terms">
                         {% for term in news.terms %}
                             <span class="term">{{ term.name }}</span>

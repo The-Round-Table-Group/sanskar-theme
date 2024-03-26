@@ -3,7 +3,7 @@
         <div class="featured-post-wrapper">
             <h1 class="featured-title">{{ news.title }}</h1>
             <div class="featured-content">
-                <p class="paragraph">{{ news.excerpt }}</p>
+                <p class="paragraph">{{ news.excerpt.read_more('') }}</p>
                 <div class="info">
                     <p><strong>Author:</strong> {{ news.author.name }}</p>
                     <p><strong>Date:</strong> {{ news.date }}</p>

@@ -13,7 +13,7 @@
 
         <h3 class="h4">{{ playlist.title }}</h3>
 
-        <p class="excerpt">{{ playlist.excerpt }}</p>
+        <p class="excerpt">{{ playlist.excerpt.read_more('') }}</p>
 
         <p class="terms">
             {% for term in playlist.terms %}

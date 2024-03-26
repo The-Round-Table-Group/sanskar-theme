@@ -25,7 +25,7 @@
 
                     <h3 class="h4">{{ news_post.title }}</h3>
 
-                    <p class="excerpt">{{ news_post.excerpt }}</p>
+                    <p class="excerpt">{{ news_post.excerpt.read_more('') }}</p>
 
                     <p class="terms">
                         {% for term in news_post.terms %}

@@ -30,6 +30,8 @@ video {
     max-width: 100%;
 }
 
+.read-more { display: none; }
+
 // global full width wrapper for main content
 .main-post-wrapper {
     max-width: $global-width; // 1400px

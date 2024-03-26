@@ -8,4 +8,12 @@
     .wp-block-video {
         margin-bottom: 4rem;
     }
+
+    p a {
+        font-weight: $semibold;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        white-space: nowrap;
+        &:hover { color: $teal; }
+    }
 }
