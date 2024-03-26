@@ -16,4 +16,9 @@
         white-space: nowrap;
         &:hover { color: $teal; }
     }
+
+    iframe {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 }
