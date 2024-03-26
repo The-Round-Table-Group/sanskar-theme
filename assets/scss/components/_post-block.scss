@@ -50,9 +50,7 @@
         .tag-filter {
             .facetwp-facet {
                 display: flex;
-                justify-content: space-between;
                 align-items: center;
-                max-width: 30rem;
                 flex-wrap: wrap;
 
                 .facetwp-radio {
@@ -61,6 +59,7 @@
                     border-radius: $radius-large;
                     background: transparent;
                     transition: $transition;
+                    margin-right: 1.25rem;
 
                     &:hover {
                         background-color: $teal;

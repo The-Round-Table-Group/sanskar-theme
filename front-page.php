@@ -4,21 +4,25 @@ $context = Timber::get_context();
 $post = Timber::get_post();
 $context['post'] = $post;
 
-$context['featured_news'] = Timber::get_terms([
-    'taxonomy'   => 'news-tax',
-    'name'       => 'featured',
-    'orderby'    => 'name',
-    'order'      => 'ASC',
-    'hide_empty' => false
+// homepage - featured article
+$context['featured_news'] = Timber::get_posts([
+    'post_type'      => 'news',
+    'posts_per_page' => 1,
+    'tax_query'      => [[
+        'taxonomy' => 'news-tax',
+        'field'    => 'slug',
+        'terms'    => 'main-feature',
+    ]]
 ]);
 
-$context['cricket_news_updates'] = Timber::get_posts([
+// homepage - featured world cup articles
+$context['world_cup_news'] = Timber::get_posts([
     'post_type'      => 'news',
     'posts_per_page' => 3,
     'tax_query'      => [[
         'taxonomy' => 'news-tax',
         'field'    => 'slug',
-        'terms'    => 'cricket-updates',
+        'terms'    => 'world-cup',
     ]]
 ]);
 

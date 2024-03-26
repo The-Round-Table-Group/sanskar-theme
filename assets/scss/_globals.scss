@@ -34,13 +34,16 @@ img {
     @include mq(lg) { padding: 1rem 3rem; }
 }
 
+// tag pill-style
 .term {
     padding: 0.2rem 0.5rem;
     border: 1px solid $blue;
     border-radius: $radius-large;
+    white-space: nowrap; // prevent tag text from wrapping
+}
 
-    &:hover {
-        background-color: $blue;
-        color: $white;
-    }
+// for tags not inside a card (clickable)
+a.term:hover {
+    background-color: $blue;
+    color: $white;
 }

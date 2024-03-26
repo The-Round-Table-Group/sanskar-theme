@@ -103,7 +103,12 @@ class SanskarSite extends Timber\Site {
             'posts_per_page' => 3,
             'post_status'    => 'publish',
             'order'          => 'DESC',
-            'orderby'        => 'date'
+            'orderby'        => 'date',
+            'tax_query'      => [[
+                'taxonomy' => 'contest-tax',
+                'field'    => 'slug',
+                'terms'    => 'featured'
+            ]]
         ]);
 
         // block playlist
@@ -112,7 +117,12 @@ class SanskarSite extends Timber\Site {
             'posts_per_page' => 3,
             'post_status'    => 'publish',
             'order'          => 'DESC',
-            'orderby'        => 'date'
+            'orderby'        => 'date',
+            'tax_query'      => [[
+                'taxonomy' => 'playlist-tax',
+                'field'    => 'slug',
+                'terms'    => 'featured'
+            ]]
         ]);
 
         // block news
@@ -121,7 +131,12 @@ class SanskarSite extends Timber\Site {
             'posts_per_page' => 3,
             'post_status'    => 'publish',
             'order'          => 'DESC',
-            'orderby'        => 'date'
+            'orderby'        => 'date',
+            'tax_query'      => [[
+                'taxonomy' => 'news-tax',
+                'field'    => 'slug',
+                'terms'    => 'featured'
+            ]]
         ]);
 
 		return $context;

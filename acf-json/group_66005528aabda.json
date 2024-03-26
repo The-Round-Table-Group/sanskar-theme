@@ -24,7 +24,7 @@
         },
         {
             "key": "field_6600554502e25",
-            "label": "Header Text",
+            "label": "Header Text \/ Excerpt",
             "name": "header_text",
             "aria-label": "",
             "type": "textarea",
@@ -68,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711301102
+    "modified": 1711462385
 }
