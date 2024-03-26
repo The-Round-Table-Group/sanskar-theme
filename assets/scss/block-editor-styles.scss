@@ -15,4 +15,14 @@ body {
 
     // all blocks
     @import 'components/component-loader';
+
+    p a,
+    ul li a,
+    ol li a {
+        font-weight: $semibold;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        white-space: nowrap;
+        &:hover { color: $teal; }
+    }
 }

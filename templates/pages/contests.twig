@@ -12,6 +12,9 @@
         <div class="post-block__post-row facetwp-template">
             {% for contest in contests %}
                 <a class="post-card" href="{{ contest.link }}">
+                    <div class="date-author">
+                        <time>{{ contest.date }}</time>
+                    </div>
 
                     {% if contest.card_image.url %}
                         <img src="{{ contest.card_image.url }}" alt="{{ contest.title }}" />

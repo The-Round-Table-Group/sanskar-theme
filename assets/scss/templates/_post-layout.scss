@@ -10,7 +10,9 @@
         @include mq(sm) { margin-bottom: 4rem; }
     }
 
-    p a {
+    p a,
+    ul li a,
+    ol li a {
         font-weight: $semibold;
         text-decoration: underline;
         text-underline-offset: 3px;
