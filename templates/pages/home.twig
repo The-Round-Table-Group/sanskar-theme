@@ -17,7 +17,7 @@
                     </div>
                     <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
                     <h3 class="h4">{{ contest.title }}</h3>
-                    <p class="excerpt">{{ contest.header_text }}</p>
+                    <p class="excerpt">{{ contest.excerpt }}</p>
                     <p class="terms">
                         {% for term in contest.terms %}
                             <span class="term">{{ term.name }}</span>
@@ -54,7 +54,7 @@
                     </div>
                     <img src="{{ playlist.thumbnail.src }}" alt="{{ playlist.title }}" />
                     <h3 class="h4">{{ playlist.title }}</h3>
-                    <p class="excerpt">{{ playlist.header_text }}</p>
+                    <p class="excerpt">{{ playlist.excerpt }}</p>
                     <p class="terms">
                         {% for term in playlist.terms %}
                             <span class="term">{{ term.name }}</span>
@@ -82,7 +82,7 @@
                     </div>
                     <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
                     <h3 class="h4">{{ news.title }}</h3>
-                    <p class="excerpt">{{ news.header_text }}</p>
+                    <p class="excerpt">{{ news.excerpt }}</p>
                     <p class="terms">
                         {% for term in news.terms %}
                             <span class="term">{{ term.name }}</span>

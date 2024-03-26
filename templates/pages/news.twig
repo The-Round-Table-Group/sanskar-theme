@@ -16,9 +16,17 @@
                         <time>{{ news_post.date }}</time>
                         <span>{{ news_post.author.name }}</span>
                     </div>
-                    <img src="{{ news_post.thumbnail.src }}" alt="{{ news_post.title }}" />
+
+                    {% if news_post.card_image.url %}
+                        <img src="{{ news_post.card_image.url }}" alt="{{ news_post.title }}" />
+                    {% else %}
+                        <img src="{{ news_post.thumbnail.src }}" alt="{{ news_post.title }}" />
+                    {% endif %}
+
                     <h3 class="h4">{{ news_post.title }}</h3>
-                    <p class="excerpt">{{ news_post.header_text }}</p>
+
+                    <p class="excerpt">{{ news_post.excerpt }}</p>
+
                     <p class="terms">
                         {% for term in news_post.terms %}
                             <span class="term">{{ term.name }}</span>

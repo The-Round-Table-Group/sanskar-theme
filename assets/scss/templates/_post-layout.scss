@@ -1,8 +1,10 @@
-// News archive and single posts
+// post content area
 .post-layout {
     max-width: 61.25rem; // 980px
     margin: 1rem auto;
 
+    // header image/video
+    .post-image,
     .wp-block-video {
         margin-bottom: 4rem;
     }

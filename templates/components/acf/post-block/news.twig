@@ -5,11 +5,15 @@
             <span>{{ news.author.name }}</span>
         </div>
 
-        <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+        {% if news.card_image.url %}
+            <img src="{{ news.card_image.url }}" alt="{{ news.title }}" />
+        {% else %}
+            <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+        {% endif %}
 
         <h3 class="h4">{{ news.title }}</h3>
 
-        <p class="excerpt">{{ news.header_text }}</p>
+        <p class="excerpt">{{ news.excerpt }}</p>
 
         <p class="terms">
             {% for term in news.terms %}

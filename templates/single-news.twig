@@ -2,6 +2,10 @@
 
 {% block content %}
 <article class="post-layout">
+    {% if post.image_or_video == 'image' %}
+        <img class="post-image" src="{{ post.thumbnail.src }}" alt="{{ post.title }}" />
+    {% endif %}
+
     {{ post.content }}
 </article>
 {% endblock %}

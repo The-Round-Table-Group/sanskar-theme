@@ -12,12 +12,17 @@
         <div class="post-block__post-row facetwp-template">
             {% for contest in contests %}
                 <a class="post-card" href="{{ contest.link }}">
-                    <div class="date-author">
-                        <time>{{ contest.date }}</time>
-                    </div>
-                    <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
+
+                    {% if contest.card_image.url %}
+                        <img src="{{ contest.card_image.url }}" alt="{{ contest.title }}" />
+                    {% else %}
+                        <img src="{{ contest.thumbnail.src }}" alt="{{ contest.title }}" />
+                    {% endif %}
+
                     <h3 class="h4">{{ contest.title }}</h3>
-                    <p class="excerpt">{{ contest.header_text }}</p>
+
+                    <p class="excerpt">{{ contest.excerpt }}</p>
+
                     <p class="terms">
                         {% for term in contest.terms %}
                             <span class="term">{{ term.name }}</span>

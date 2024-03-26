@@ -145,9 +145,12 @@ class SanskarSite extends Timber\Site {
 
 	// theme support and options page
 	function after_setup_theme() {
-		add_theme_support( 'html5' );
+        add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'align-wide' );
 		add_theme_support( 'disable-custom-colors' );
+        add_theme_support( 'editor-styles' );
+		add_editor_style( 'block-editor-styles.css' );
 
         if (function_exists('acf_add_options_page')) {
             $parent = acf_add_options_page([
