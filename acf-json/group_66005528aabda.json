@@ -46,16 +46,9 @@
     "location": [
         [
             {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "front-page.php"
-            }
-        ],
-        [
-            {
                 "param": "post_type",
-                "operator": "!=",
-                "value": "post"
+                "operator": "==",
+                "value": "page"
             }
         ]
     ],
@@ -68,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711462385
+    "modified": 1711472638
 }

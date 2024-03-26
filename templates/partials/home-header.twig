@@ -3,12 +3,11 @@
         <div class="featured-post-wrapper">
             <h1 class="featured-title">{{ news.title }}</h1>
             <div class="featured-content">
-                <p class="paragraph">{{ news.header_text }}</p>
+                <p class="paragraph">{{ news.excerpt }}</p>
                 <div class="info">
                     <p><strong>Author:</strong> {{ news.author.name }}</p>
                     <p><strong>Date:</strong> {{ news.date }}</p>
                     <p>
-                        <strong>Tags:</strong>
                         {% for term in news.terms %}
                             <a class="term" href="news/?_news_tag={{ term.slug }}">{{ term.name }}</a>
                         {% endfor %}
@@ -16,6 +15,13 @@
                 </div>
             </div>
         </div>
-        <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+
+        {% if news.image_or_video == 'image' %}
+            <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+        {% else %}
+            <video controls poster="{{ news.featured_video_poster.url }}" preload="metadata">
+                <source src="{{ news.featured_video_url }}" type="video/mp4">
+            </video>
+        {% endif %}
     {% endfor %}
 </article>

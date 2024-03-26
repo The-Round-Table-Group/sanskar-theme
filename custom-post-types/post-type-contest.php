@@ -34,7 +34,7 @@ $args = [
 	'can_export'          => true,
 	'rewrite'             => true,
 	'capability_type'     => 'post',
-	'supports'            => [ 'title', 'thumbnail', 'editor' ],
+	'supports'            => [ 'title', 'thumbnail', 'editor', 'excerpt' ],
 ];
 register_post_type( 'contest', $args );
 

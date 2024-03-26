@@ -26,6 +26,10 @@ img {
 	height: auto;
 }
 
+video {
+    max-width: 100%;
+}
+
 // global full width wrapper for main content
 .main-post-wrapper {
     max-width: $global-width; // 1400px

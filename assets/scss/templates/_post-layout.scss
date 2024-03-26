@@ -1,5 +1,9 @@
 // News archive and single posts
 .post-layout {
     max-width: 61.25rem; // 980px
-    margin: 2rem auto;
+    margin: 1rem auto;
+
+    .wp-block-video {
+        margin-bottom: 4rem;
+    }
 }

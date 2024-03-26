@@ -37,7 +37,7 @@
         <meta property="og:type" content="website" />
 
         {# News links may appear on multiple pages #}
-        {% if fn('is_singular', 'news') %}
+        {% if fn('is_single', 'news') %}
 			<link rel="canonical" href="{{ post.link }}">
 		{% endif %}
 
@@ -57,7 +57,7 @@
         <header class="site-header">
             {% if is_front_page %}
                 {% include 'partials/home-header.twig' %}
-            {% elseif is_singular %}
+            {% elseif is_single %}
                 {% include 'partials/post-header.twig' %}
             {% else %}
                 {% include 'partials/default-header.twig' %}

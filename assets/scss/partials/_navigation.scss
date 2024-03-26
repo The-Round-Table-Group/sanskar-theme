@@ -15,12 +15,13 @@
     &__menu {
         display: flex;
         justify-content: space-between;
-        max-width:35rem;
+        max-width: 32rem;
         width: 100%;
 
         .menu-link {
             position: relative;
-            font-size: 1.125rem;
+            font-family: $oswald;
+            font-size: 1.3rem;
             font-weight: 600;
             &:hover { color: $teal; }
             &.active { color: $teal; }

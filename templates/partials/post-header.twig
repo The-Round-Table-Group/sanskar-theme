@@ -2,6 +2,6 @@
     <h1>{{ post.title }}</h1>
 </div>
 
-{% if post.thumbnail.src %}
-    <img src="{{ post.thumbnail.src }}" alt="{{ post.title }}" />
+{% if image_or_video == 'image' %}
+    <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
 {% endif %}
