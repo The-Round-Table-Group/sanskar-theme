@@ -11,7 +11,12 @@
                             <div class="info">
                                 <p><strong>Author:</strong> {{ post.author.name }}</p>
                                 <p><strong>Date:</strong> {{ post.date }}</p>
-                                <p><strong>Tags:</strong> {% for term in post.terms %}<span class="term">{{ term.name }}</span>{% endfor %}</p>
+                                <p>
+                                    <strong>Tags:</strong>
+                                    {% for term in post.terms %}
+                                        <a class="term" href="news/?_news_tag={{ term.slug }}">{{ term.name }}</a>
+                                    {% endfor %}
+                                </p>
                             </div>
                         </div>
                     </div>

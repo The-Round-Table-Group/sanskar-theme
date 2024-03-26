@@ -38,4 +38,9 @@ img {
     padding: 0.2rem 0.5rem;
     border: 1px solid $blue;
     border-radius: $radius-large;
+
+    &:hover {
+        background-color: $blue;
+        color: $white;
+    }
 }
