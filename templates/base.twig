@@ -57,8 +57,10 @@
         <header class="site-header">
             {% if is_front_page %}
                 {% include 'partials/home-header.twig' %}
-            {% else %}
+            {% elseif is_singular %}
                 {% include 'partials/post-header.twig' %}
+            {% else %}
+                {% include 'partials/default-header.twig' %}
             {% endif %}
         </header>
 

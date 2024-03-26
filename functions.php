@@ -94,6 +94,7 @@ class SanskarSite extends Timber\Site {
 		$context['date_year']      	= date('Y');
 		$context['is_front_page']	= is_front_page();
         $context['is_single']       = is_single();
+        $context['is_singular']     = is_singular();
         $context['options']         = get_fields('option');
         $context['get_url']         = $_SERVER['REQUEST_URI'];
 

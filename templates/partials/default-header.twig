@@ -1,0 +1,15 @@
+<div class="site-header__text">
+    {% if post.header_title %}
+        <h1>{{ post.header_title }}</h1>
+    {% else %}
+        <h1>{{ post.title }}</h1>
+    {% endif %}
+
+    {% if post.header_text %}
+        <p>{{ post.header_text }}</p>
+    {% endif %}
+</div>
+
+{% if post.thumbnail.src %}
+    <img src="{{ post.thumbnail.src }}" alt="{{ post.title }}" />
+{% endif %}

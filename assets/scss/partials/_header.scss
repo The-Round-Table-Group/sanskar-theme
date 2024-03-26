@@ -66,9 +66,10 @@
                 }
             }
         }
-    } // __featured-post
+    }
+    // __featured-post
 
-    // all other pages/posts
+    // all other pages
     &__text {
         display: flex;
         flex-direction: column;
@@ -102,6 +103,17 @@
             margin-bottom: 0;
             margin-left: 0;
             @include mq(md) { margin-left: 2rem; }
+        }
+    }
+
+    // news, contests, playlist posts
+    &__post-text {
+        text-align: center;
+
+        h1 {
+            max-width: 61.25rem;
+            margin: 0 auto 2rem;
+            text-align: center;
         }
     }
 }
