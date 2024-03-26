@@ -6,7 +6,8 @@
     // header image/video
     .post-image,
     .wp-block-video {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
+        @include mq(sm) { margin-bottom: 4rem; }
     }
 
     p a {
