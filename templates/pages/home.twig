@@ -58,7 +58,17 @@
                 </div>
             {% endfor %}
         </div>
-        <aside class="split-column__ads"></aside>
+
+        <aside class="split-column__ads">
+            <div class="promotion">
+                <h4>Brought to you by:</h4>
+                <img src="{{ options.promoted_content_image.url }}" alt="Promotion" />
+                <a class="primary-button" href="{{ options.promoted_link.url }}" target="_blank" rel="noreferrer noopener">{{ options.promoted_link.title }}</a>
+            </div>
+
+            <div class="contests"></div>
+            <div class="sidebar-subscribe"></div>
+        </aside>
     </section>
 
     {# Featured Spotify Playlists #}

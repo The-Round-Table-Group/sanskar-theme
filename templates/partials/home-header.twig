@@ -1,7 +1,10 @@
 <article class="site-header__featured-post">
     {% for news in featured_news %}
         <div class="featured-post-wrapper">
-            <h1 class="featured-title">{{ news.title }}</h1>
+            <a href="{{ news.link }}">
+                <h1 class="featured-title">{{ news.title }}</h1>
+            </a>
+
             <div class="featured-content">
                 <p class="paragraph">{{ news.excerpt.read_more('') }}</p>
                 <div class="info">

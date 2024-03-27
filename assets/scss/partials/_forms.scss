@@ -57,36 +57,38 @@
 }
 
 // Footer Email Subscribe
-#gform_wrapper_1 {
-    label {
-        display: none;
-    }
+.subscribe-block {
+    #gform_wrapper_1 {
+        label {
+            display: none;
+        }
 
-    #gform_1 {
-        display: flex;
-        background-color: $white;
-    }
+        #gform_1 {
+            display: flex;
+            background-color: $white;
+        }
 
-    #input_1_1 {
-        padding: 0.5rem 0.75rem;
-        border: unset;
-        border-right: 1px solid $blue;
-        line-height: 1.5;
-    }
+        #input_1_1 {
+            padding: 0.5rem 0.75rem;
+            border: unset;
+            border-right: 1px solid $blue;
+            line-height: 1.5;
+        }
 
-    #gform_submit_button_1 {
-        background-color: $white;
-        color: $blue;
-        padding: 0.5rem 0.75rem;
-        border: unset;
-        line-height: 1.5;
-        transition: $transition;
-
-        &:hover {
-            background-color: $teal;
-            color: $white;
-            cursor: pointer;
+        #gform_submit_button_1 {
+            background-color: $white;
+            color: $blue;
+            padding: 0.5rem 0.75rem;
+            border: unset;
+            line-height: 1.5;
             transition: $transition;
+
+            &:hover {
+                background-color: $teal;
+                color: $white;
+                cursor: pointer;
+                transition: $transition;
+            }
         }
     }
 }
