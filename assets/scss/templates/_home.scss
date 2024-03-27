@@ -1,0 +1,25 @@
+.split-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 3rem auto;
+
+    @include mq(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    // 6 featured news stories
+    &__news {
+        max-width: 55rem;
+    }
+
+    // promoted content and ads
+    &__ads {
+        flex-shrink: 0;
+        max-width: 23rem;
+    }
+}
