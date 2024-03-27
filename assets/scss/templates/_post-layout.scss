@@ -16,9 +16,10 @@
         font-weight: $semibold;
         text-decoration: underline;
         text-underline-offset: 3px;
-        white-space: nowrap;
         &:hover { color: $teal; }
     }
+
+    p a { white-space: nowrap; }
 
     iframe {
         margin-top: 2rem;
