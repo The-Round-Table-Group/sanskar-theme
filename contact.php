@@ -4,18 +4,14 @@ $context = Timber::get_context();
 $post = Timber::get_post();
 $context['post'] = $post;
 
-// all contests
-$context['contests'] = Timber::get_posts([
+// all sidebar contests
+$context['sidebar_contests'] = Timber::get_posts([
     'post_type'      => 'contest',
-    'posts_per_page' => 3,
+    'posts_per_page' => 6,
+    'meta_key'       => 'show_in_sidebar',
+    'meta_value'     => true,
     'order'          => 'DESC',
-    'orderby'        => 'date',
-    'facetwp'        => false,
-    'tax_query'      => [[
-        'taxonomy' => 'contest-tax',
-        'field'    => 'slug',
-        'terms'    => 'featured',
-    ]]
+    'orderby'        => 'date'
 ]);
 
 $templates = ['pages/contact.twig'];

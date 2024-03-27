@@ -30,7 +30,7 @@
     </section>
 
     {# Featured News and Ads #}
-    <section class="split-column">
+    <section class="split-column align-center">
         <div class="split-column__news">
             {% for news_post in news %}
                 <div class="news-container">
@@ -69,7 +69,7 @@
             <div class="contests">
                 <p class="h4">Featured Contests</p>
                 {% set count = 1 %}
-                {% for contest in contests %}
+                {% for contest in sidebar_contests %}
                     <div class="contest-info">
                         <p class="count">0{{ count }}</p>
                         <a class="contest-link" href="{{ contest.link }}">{{ contest.title }}</a>

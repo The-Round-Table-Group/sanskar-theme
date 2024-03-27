@@ -54,5 +54,15 @@ $context['contests'] = Timber::get_posts([
     ]]
 ]);
 
+// all sidebar contests
+$context['sidebar_contests'] = Timber::get_posts([
+    'post_type'      => 'contest',
+    'posts_per_page' => 6,
+    'meta_key'       => 'show_in_sidebar',
+    'meta_value'     => true,
+    'order'          => 'DESC',
+    'orderby'        => 'date'
+]);
+
 $templates = ['pages/home.twig'];
 Timber::render( $templates, $context );
