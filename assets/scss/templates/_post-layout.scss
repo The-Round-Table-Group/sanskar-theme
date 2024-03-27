@@ -3,11 +3,25 @@
     max-width: 61.25rem; // 980px
     margin: 1rem auto;
 
-    // header image/video
+    // all iframes (mainly for spotify)
+    iframe {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    // header image/video content
     .post-image,
     .wp-block-video {
         margin-bottom: 2rem;
         @include mq(sm) { margin-bottom: 4rem; }
+    }
+
+    // youtube
+    .wp-block-embed.is-type-video {
+        iframe {
+            width: 100%;
+            margin-bottom: 0;
+        }
     }
 
     p a,
@@ -21,10 +35,7 @@
 
     p a { white-space: nowrap; }
 
-    iframe {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
+
 
     .author-block {
         display: flex;

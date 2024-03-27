@@ -18,9 +18,9 @@
     &__menu {
         display: flex;
         position: absolute;
-        right: -100%;
         justify-content: space-between;
-        max-width: 100%;
+        right: 0;
+        max-width: 0%;
         width: 0%;
         transition: width 0.3s ease-in;
 
@@ -43,7 +43,6 @@
     // open class for &__menu when clicked
     .mobile-menu-open {
         top: 6rem;
-        right: 0;
         max-width: 100%;
         width: 100%;
         padding: 2rem 2rem 2.5rem;
