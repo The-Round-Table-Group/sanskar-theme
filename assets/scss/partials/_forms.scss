@@ -93,6 +93,44 @@
     }
 }
 
+// uses subscribe form in sidebar
+.sidebar-subscribe {
+    #gform_wrapper_1 {
+        max-width: 18rem;
+
+        .gfield_required,
+        label { display: none; }
+
+        input {
+            display: block;
+            width: 18rem;
+            margin-top: 0.25rem;
+            margin-bottom: 0.75rem;
+            font-family: $montserrat;
+            font-size: 0.9375rem;
+            padding: 0.5rem;
+            border: 1px solid $blue;
+        }
+
+        #gform_submit_button_1 {
+            width: 7rem;
+            background-color: transparent;
+            color: $teal;
+            padding: 0.35rem 0.5rem;
+            border: 1px solid $teal;
+            line-height: 1.5;
+            transition: $transition;
+
+            &:hover {
+                background-color: $teal;
+                color: $white;
+                cursor: pointer;
+                transition: $transition;
+            }
+        }
+    }
+}
+
 // Shreya Ghoshal AHT Contest Form
 #gform_wrapper_2 {
     max-width: 17rem;

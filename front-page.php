@@ -40,5 +40,19 @@ $context['news'] = Timber::get_posts([
     ]]
 ]);
 
+// all news
+$context['contests'] = Timber::get_posts([
+    'post_type'      => 'contest',
+    'posts_per_page' => 3,
+    'order'          => 'DESC',
+    'orderby'        => 'date',
+    'facetwp'        => false,
+    'tax_query'      => [[
+        'taxonomy' => 'contest-tax',
+        'field'    => 'slug',
+        'terms'    => 'featured',
+    ]]
+]);
+
 $templates = ['pages/home.twig'];
 Timber::render( $templates, $context );

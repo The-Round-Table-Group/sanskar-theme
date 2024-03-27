@@ -21,6 +21,10 @@
             }
         }
 
+        .featured-title-wrapper {
+            flex-shrink: 0;
+        }
+
         .featured-title {
             flex-shrink: 0;
             max-width: 30rem;

@@ -1,7 +1,7 @@
 <article class="site-header__featured-post">
     {% for news in featured_news %}
         <div class="featured-post-wrapper">
-            <a href="{{ news.link }}">
+            <a class="featured-title-wrapper" href="{{ news.link }}">
                 <h1 class="featured-title">{{ news.title }}</h1>
             </a>
 

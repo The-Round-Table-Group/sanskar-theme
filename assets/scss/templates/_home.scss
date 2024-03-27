@@ -4,9 +4,9 @@
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    margin: 3rem auto 2rem;
+    margin: 3rem auto 0;
 
-    @include mq(lg) {
+    @include mq(xl) {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
@@ -61,24 +61,31 @@
     // promoted content and ads
     &__ads {
         display: flex;
-        position: sticky;
-        top: 0.5rem;
-        max-width: 23rem;
-        margin-left: 0;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         flex-shrink: 0;
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 3.85rem;
 
         @include mq(md) {
-            flex-direction: column;
-            justify-content: center;
-            margin-left: 2rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        @include mq(xl) {
+            margin-left: 4rem;
+            max-width: 18rem;
+            margin-top: 0;
         }
 
         // ad / promotion
         .promotion {
-            margin-bottom: 0;
-            @include mq(md) { margin-bottom: 2rem; }
+            margin-bottom: 2.5rem;
 
             h4 { margin-top: 0; }
 
@@ -88,8 +95,46 @@
             }
         }
 
-        .contests {}
+        .contests {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            margin-bottom: 1.85rem;
 
-        .sidebar-subscribe {}
+            @include mq(xl) {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .h4 {
+                margin-top: 0;
+                @include mq(xl) { margin-top: 1.2rem; }
+            }
+
+            .contest-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                max-width: 18rem;
+                margin-bottom: 1rem;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid $blue;
+
+                .count {
+                    position: relative;
+                    top: -3px;
+                    margin: 0 1rem 0 0;
+                    font-size: 1.5rem;
+                    font-weight: $semibold;
+                }
+            }
+        }
+
+        .sidebar-subscribe {
+            .h4 {
+                margin-top: 0;
+                @include mq(xl) { margin-top: 1.2rem; }
+            }
+        }
     }
 }
