@@ -6,8 +6,8 @@
         var path = location.pathname.split('/'); // url path array
 
         if (path[1] !== '') {
-            $('.menu-link[href^="https://sanskarsavvy.local/' + path[1] + '"]').addClass('active'); // dev
-            // $('.menu-link[href^="https://sanskarsavvy.com/' + path[1] + '"]').addClass('active'); // prod
+            // $('.menu-link[href^="https://sanskarsavvy.local/' + path[1] + '"]').addClass('active'); // dev
+            $('.menu-link[href^="https://sanskarsavvy.com/' + path[1] + '"]').addClass('active'); // prod
         }
 
         /**

@@ -1,2 +1,2 @@
-!function(a){a(document).ready((function(){var n=location.pathname.split("/");""!==n[1]&&a('.menu-link[href^="https://sanskarsavvy.local/'+n[1]+'"]').addClass("active"),a("#menu-toggle").on("click",(function(){a(".x-bar").toggleClass("x-bar-active"),a(".nav-wrapper__menu").toggleClass("mobile-menu-open")}))}))}(jQuery);
+!function(a){a(document).ready((function(){var n=location.pathname.split("/");""!==n[1]&&a('.menu-link[href^="https://sanskarsavvy.com/'+n[1]+'"]').addClass("active"),a("#menu-toggle").on("click",(function(){a(".x-bar").toggleClass("x-bar-active"),a(".nav-wrapper__menu").toggleClass("mobile-menu-open")}))}))}(jQuery);
 //# sourceMappingURL=site-dist.js.map
