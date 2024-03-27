@@ -96,12 +96,17 @@
         }
 
         .post-card {
-            flex: 1 1 22rem;
+            flex: 1 1 18rem;
             position: relative;
-            min-width: 22rem;
+            min-width: 18rem;
             max-width: 27rem;
             padding: 1.5rem;
             border: 1px solid $blue;
+
+            @include mq(xxs) {
+                flex: 1 1 22rem;
+                min-width: 22rem;
+            }
 
             &:hover {
                 background-color: rgba($teal, 0.08);
