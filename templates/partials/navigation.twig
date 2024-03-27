@@ -9,6 +9,12 @@
         {% endif %}
     </div>
 
+    <div id="menu-toggle">
+        <span class="x-bar xb1"></span>
+        <span class="x-bar xb2"></span>
+        <span class="x-bar xb3"></span>
+    </div>
+
     <nav class="nav-wrapper__menu" aria-label="Main site navigation">
         {% for item in options.navigation %}
             <a class="menu-link" href="{{ item.nav_link.url }}">{{ item.nav_link.title }}</a>

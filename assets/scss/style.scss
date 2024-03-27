@@ -4,7 +4,7 @@
     Author URI: https://trt.group
     Description: Custom theme for Sanskar Savvy.
     Text Domain: skv
-    Version: 1.2.1
+    Version: 1.2.2
 */
 
 // Import dependencies
@@ -14,14 +14,15 @@
 @import 'globals';                  // Base html/body setup, wrappers, containers
 @import 'typography';               // Sitewide typography: sizing, spacing, initial colors
 
-// Import Template Partials
-@import 'partials/navigation';      // site navigation
-@import 'partials/header';          // site header (home has different header - loaded separately)
-@import 'partials/footer';          // site footer
-@import 'partials/forms';           // sitewide forms
+// Import template partials
+@import 'packages/xbar';            // Mobile Nav Xbar + animation
+@import 'partials/navigation';      // Site navigation
+@import 'partials/header';          // Site header (home has different header - loaded separately)
+@import 'partials/footer';          // Site footer
+@import 'partials/forms';           // Sitewide forms
 
 // Import components
-@import 'components/component-loader';  // loads all components
+@import 'components/component-loader';  // Load all components
 
 // Import templates
-@import 'templates/template-loader';    // loads all template layouts
+@import 'templates/template-loader';    // Load all template layouts

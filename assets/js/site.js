@@ -9,5 +9,13 @@
             $('.menu-link[href^="https://sanskarsavvy.local/' + path[1] + '"]').addClass('active'); // dev
             // $('.menu-link[href^="https://sanskarsavvy.com/' + path[1] + '"]').addClass('active'); // prod
         }
+
+        /**
+         * Mobile menu toggle
+        */
+        $('#menu-toggle').on('click', function() {
+            $('.x-bar').toggleClass('x-bar-active');
+            $('.nav-wrapper__menu').addClass('mobile-menu-open');
+        });
     });
 })(jQuery);

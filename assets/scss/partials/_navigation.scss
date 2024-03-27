@@ -4,19 +4,23 @@
     align-items: center;
     max-width: $global-width;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0 1rem;
     border-bottom: 1px solid $blue;
+    @include mq(xs) { padding: 0.65rem 1rem; }
+    @include mq(sm) { padding: 1rem; }
     @include mq(lg) { padding: 1rem 3rem; }
 
     &__logo svg {
-        max-width: 15rem;
+        max-width: 12rem;
+        @include mq(sm) { max-width: 15rem; }
     }
 
     &__menu {
-        display: flex;
+        display: none;
         justify-content: space-between;
         max-width: 32rem;
         width: 100%;
+        @include mq(sm) { display: flex; }
 
         .menu-link {
             position: relative;
@@ -27,4 +31,7 @@
             &.active { color: $teal; }
         }
     }
+
+    // open class for &__menu when clicked
+    .mobile-menu-open {}
 }

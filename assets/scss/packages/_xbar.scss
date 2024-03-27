@@ -1,0 +1,45 @@
+#menu-toggle {
+    position: relative;
+    display: block;
+    @include mq(sm) { display: none; }
+
+    .x-bar {
+        display: block;
+        height: 4px;
+        margin-bottom: 6px;
+        background-color: $blue;
+        transition: $transition;
+        border-radius: 2px;
+        margin-right: 0;
+        margin-left: auto;
+
+        // stagger the bars
+        &.xb1 { width: 2rem; }
+        &.xb2 { width: 1.6rem; }
+        &.xb3 { width: 1.2rem; }
+    }
+
+    .x-bar-active {
+        position: relative;
+        transition: $transition;
+        margin-bottom: 0;
+
+        &.xb1 {
+            top: -1px;
+            width: 1.85rem;
+            transform: rotate(45deg);
+        }
+
+        &.xb2 {
+            opacity: 0;
+        }
+
+        &.xb3 {
+            bottom: 0.6rem;
+            right: 1px;
+            width: 1.8rem;
+            transform: rotate(-45deg);
+            margin-bottom: 0;
+        }
+    }
+}
