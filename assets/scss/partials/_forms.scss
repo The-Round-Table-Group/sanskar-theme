@@ -132,7 +132,8 @@
 }
 
 // Shreya Ghoshal AHT Contest Form
-#gform_wrapper_2 {
+#gform_wrapper_2,
+#gform_wrapper_5 {
     max-width: 17rem;
     margin: 2.5rem auto 0;
 
@@ -148,15 +149,17 @@
         display: inline-block;
     }
 
-    #input_2_1_3,
-    #input_2_5_3,
-    #input_2_5_4 {
-        margin-right: 0;
-        @include mq(600px) { margin-right: 1rem; }
-    }
-
     .gfield--type-email {
         margin-right: 0;
         @include mq(600px) { margin-right: 1.3rem; }
     }
+
+    .name_first,
+    .address_city,
+    .address_state {
+        margin-right: 0;
+        @include mq(600px) { margin-right: 1rem; }
+    }
+
+
 }

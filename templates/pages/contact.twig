@@ -1,7 +1,36 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-    <section class="post-layout">
-        {{ post.content }}
+<div class="post-layout">
+    <section class="split-column">
+        <div class="split-column__news">
+            {{ post.content }}
+        </div>
+
+        <aside class="split-column__ads">
+            <div class="promotion">
+                <h4>Brought to you by:</h4>
+                <img src="{{ options.promoted_content_image.url }}" alt="Promotion" />
+                <a class="primary-button" href="{{ options.promoted_link.url }}" target="_blank" rel="noreferrer noopener">{{ options.promoted_link.title }}</a>
+            </div>
+
+            <div class="contests">
+                <p class="h4">Featured Contests</p>
+                {% set count = 1 %}
+                {% for contest in contests %}
+                    <div class="contest-info">
+                        <p class="count">0{{ count }}</p>
+                        <a class="contest-link" href="{{ contest.link }}">{{ contest.title }}</a>
+                    </div>
+                    {% set count = count + 1 %}
+                {% endfor %}
+            </div>
+
+            <div class="sidebar-subscribe">
+                <p class="h4">Newsletter</p>
+                {{ fn('do_shortcode', '[gravityform id="1" title="false" description="false", ajax="true"]') }}
+            </div>
+        </aside>
     </section>
+</div>
 {% endblock %}

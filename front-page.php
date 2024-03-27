@@ -40,7 +40,7 @@ $context['news'] = Timber::get_posts([
     ]]
 ]);
 
-// all news
+// all contests
 $context['contests'] = Timber::get_posts([
     'post_type'      => 'contest',
     'posts_per_page' => 3,
