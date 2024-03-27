@@ -7,7 +7,7 @@
                 <div class="info">
                     <p><strong>Author:</strong> {{ news.author.name }}</p>
                     <p><strong>Date:</strong> {{ news.date }}</p>
-                    <p>
+                    <p><strong>Tags:</strong>
                         {% for term in news.terms %}
                             <a class="term" href="news/?_news_tag={{ term.slug }}">{{ term.name }}</a>
                         {% endfor %}
