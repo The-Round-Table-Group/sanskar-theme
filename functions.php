@@ -105,6 +105,7 @@ class SanskarSite extends Timber\Site {
             'post_status'    => 'publish',
             'order'          => 'DESC',
             'orderby'        => 'date',
+            'facetwp'        => false,
             'tax_query'      => [[
                 'taxonomy' => 'contest-tax',
                 'field'    => 'slug',
@@ -119,6 +120,7 @@ class SanskarSite extends Timber\Site {
             'post_status'    => 'publish',
             'order'          => 'DESC',
             'orderby'        => 'date',
+            'facetwp'        => false,
             'tax_query'      => [[
                 'taxonomy' => 'playlist-tax',
                 'field'    => 'slug',
@@ -133,6 +135,7 @@ class SanskarSite extends Timber\Site {
             'post_status'    => 'publish',
             'order'          => 'DESC',
             'orderby'        => 'date',
+            'facetwp'        => false,
             'tax_query'      => [[
                 'taxonomy' => 'news-tax',
                 'field'    => 'slug',
