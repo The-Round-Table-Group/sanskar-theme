@@ -16,11 +16,19 @@
     }
 
     &__menu {
-        display: none;
+        display: flex;
+        position: absolute;
+        right: -100%;
         justify-content: space-between;
-        max-width: 32rem;
-        width: 100%;
-        @include mq(sm) { display: flex; }
+        max-width: 100%;
+        width: 0%;
+        transition: width 0.3s ease-in;
+
+        @include mq(sm) {
+            position: static;
+            max-width: 32rem;
+            width: 100%;
+        }
 
         .menu-link {
             position: relative;
@@ -33,5 +41,23 @@
     }
 
     // open class for &__menu when clicked
-    .mobile-menu-open {}
+    .mobile-menu-open {
+        top: 6rem;
+        right: 0;
+        max-width: 100%;
+        width: 100%;
+        padding: 2rem;
+        background-color: $teal;
+        height: 25rem;
+        flex-direction: column;
+        text-align: right;
+        z-index: 10;
+        transition: width 0.3s ease-out;
+        @include mq(xs) { top: 7.3rem; }
+
+        .menu-link {
+            font-size: 2rem;
+            color: $white;
+        }
+    }
 }

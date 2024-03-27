@@ -15,7 +15,7 @@
         */
         $('#menu-toggle').on('click', function() {
             $('.x-bar').toggleClass('x-bar-active');
-            $('.nav-wrapper__menu').addClass('mobile-menu-open');
+            $('.nav-wrapper__menu').toggleClass('mobile-menu-open');
         });
     });
 })(jQuery);
