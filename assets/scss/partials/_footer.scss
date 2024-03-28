@@ -18,14 +18,14 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
 
-            @include mq(600px) {
+            @include mq(sm) {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
             }
 
             .h3 {
-                max-width: 25rem;
+                max-width: 32rem;
                 margin-top: 0;
                 margin-bottom: 0;
                 line-height: 1.3;
