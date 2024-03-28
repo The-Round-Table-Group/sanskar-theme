@@ -52,6 +52,23 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_6605a8bcd3920",
+            "label": "Twitter \/ X",
+            "name": "twitter",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -72,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708620943
+    "modified": 1711646930
 }

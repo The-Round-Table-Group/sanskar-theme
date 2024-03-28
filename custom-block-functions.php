@@ -12,7 +12,7 @@ if ( function_exists('acf_register_block_type') ) :
 		'description' => __( 'Creates an inline button with text/background colors of your choice. Limited to theme colors for consistency.', 'skv' ),
 		'render_callback' => 'custom_block_callback',
 		'category' => 'skv-blocks',
-		'align' => 'wide',
+		'align' => '',
 		'icon' => 'button',
 		'mode' => 'auto',
 		'supports' => [ 'mode' => true ],

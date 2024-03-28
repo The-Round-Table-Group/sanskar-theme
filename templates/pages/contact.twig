@@ -8,11 +8,18 @@
         </div>
 
         <aside class="split-column__ads">
-            {# <div class="promotion">
-                <h4>Brought to you by:</h4>
-                <img src="{{ options.promoted_content_image.url }}" alt="Promotion" />
-                <a class="primary-button" href="{{ options.promoted_link.url }}" target="_blank" rel="noreferrer noopener">{{ options.promoted_link.title }}</a>
-            </div> #}
+            <div class="promotion">
+                <h4>Featured Tours</h4>
+                {% if options.promoted_content_image.url %}
+                    <img src="{{ options.promoted_content_image.url }}" alt="Promotion" />
+                    <a class="primary-button link-one" href="{{ options.promoted_link.url }}">{{ options.promoted_link.title }}</a>
+                {% endif %}
+
+                {% if options.promoted_content_image_two.url %}
+                    <img src="{{ options.promoted_content_image_two.url }}" alt="Promotion" />
+                    <a class="primary-button" href="{{ options.promoted_link_two.url }}">{{ options.promoted_link_two.title }}</a>
+                {% endif %}
+            </div>
 
             <div class="contests">
                 <p class="h4">Featured Contests</p>
@@ -27,7 +34,7 @@
             </div>
 
             <div class="sidebar-subscribe">
-                <p class="h4">Newsletter</p>
+                <p class="h4">VIP Newsletter</p>
                 {{ fn('do_shortcode', '[gravityform id="1" title="false" description="false", ajax="true"]') }}
             </div>
         </aside>

@@ -1,0 +1,10 @@
+<a
+    class="primary-button--arrow"
+    href="{{ fields.button_link.url }}"
+    {% if fields.button_link.target %}
+        target="_blank"
+        rel="noopener noreferrer"
+    {% endif %}
+>
+    {{ fields.button_link.title }} <span class="fa-solid fa-arrow-right"></span>
+</a>

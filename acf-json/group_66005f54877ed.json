@@ -19,7 +19,7 @@
             "layout": "table",
             "pagination": 0,
             "min": 0,
-            "max": 5,
+            "max": 6,
             "collapsed": "field_66005f8691b25",
             "button_label": "Add Link",
             "rows_per_page": 20,
@@ -62,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711300524
+    "modified": 1711644147
 }
