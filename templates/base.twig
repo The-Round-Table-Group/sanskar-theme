@@ -20,8 +20,8 @@
             <meta property="og:title" content="{{ post.title }}" />
         {% endif %}
 
-        {% if post.thumbnail.url %}
-            <meta property="og:image" content="{{ post.thumbnail.url }}" />
+        {% if post.thumbnail.src %}
+            <meta property="og:image" content="{{ post.thumbnail.src }}" />
         {% else %}
             <meta property="og:image" content="{{ options.global_seo_image.url }}" />
         {% endif %}
