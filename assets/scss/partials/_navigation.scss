@@ -16,7 +16,7 @@
     }
 
     &__menu {
-        display: flex;
+        display: none;
         position: absolute;
         justify-content: space-between;
         right: 0;
@@ -25,6 +25,7 @@
         transition: width 0.3s ease-in;
 
         @include mq(sm) {
+            display: flex;
             position: static;
             max-width: 32rem;
             width: 100%;
@@ -42,6 +43,7 @@
 
     // open class for &__menu when clicked
     .mobile-menu-open {
+        display: flex;
         top: 6rem;
         max-width: 100%;
         width: 100%;
