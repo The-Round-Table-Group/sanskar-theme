@@ -224,3 +224,11 @@ function custom_menu_order( $menu_ord ) {
 }
 add_filter( 'custom_menu_order', 'custom_menu_order' );
 add_filter( 'menu_order', 'custom_menu_order' );
+
+// Change theme location for shared counts plugin
+function skv_shared_counts_location( $locations ) {
+	$locations['before']['hook'] = 'skv_post_intro';
+	$locations['before']['filter'] = false;
+	return $locations;
+}
+add_filter( 'shared_counts_theme_locations', 'skv_shared_counts_location' );

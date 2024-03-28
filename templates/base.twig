@@ -22,14 +22,16 @@
 
         {% if post.thumbnail.url %}
             <meta property="og:image" content="{{ post.thumbnail.url }}" />
+        {% else %}
+            <meta property="og:image" content="{{ options.global_seo_image.url }}" />
         {% endif %}
 
         {% if post.seo_description %}
             <meta name="description" content="{{ post.seo_description }}" />
             <meta property="og:description" content="{{ post.seo_description }}" />
         {% else %}
-            <meta name="description" content="{{ post.global_seo_description }}" />
-            <meta property="og:description" content="{{ post.global_seo_description }}" />
+            <meta name="description" content="{{ options.global_seo_description }}" />
+            <meta property="og:description" content="{{ options.global_seo_description }}" />
         {% endif %}
 
         <meta property="og:locale" content="en_US.utf-8" />

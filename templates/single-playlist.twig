@@ -7,5 +7,10 @@
     {% endif %}
 
     {{ post.content }}
+
+    <div class="share-bar">
+        <p>Share on:</p>
+        {{ fn('do_action', 'skv_post_intro') }}
+    </div>
 </article>
 {% endblock %}

@@ -8,18 +8,17 @@
 
     {{ post.content }}
 
+    <div class="share-bar">
+        <p>Share on:</p>
+        {{ fn('do_action', 'skv_post_intro') }}
+    </div>
+
     <section class="author-block">
         <div class="author-block__info">
             <img src="{{ post.author.author_image.url }}" alt="{{ post.author.name }}" />
             <div>
                 <p class="h5">{{ post.author.name }}</p>
                 <p><strong>Date:</strong> {{ post.date }}</p>
-                <p>
-                    <strong>Share:</strong>
-                    <a href="{{ options.facebook }}" target="_blank" rel="noopener"><span class="fa-brands fa-facebook-square"></span></a>
-                    <a href="{{ options.instagram }}" target="_blank" rel="noopener"><span class="fa-brands fa-instagram"></span></a>
-                    <a href="{{ options.youtube }}" target="_blank" rel="noopener"><span class="fa-brands fa-youtube"></span></a>
-                </p>
             </div>
         </div>
 
