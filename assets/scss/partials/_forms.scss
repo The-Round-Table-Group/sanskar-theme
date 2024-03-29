@@ -163,6 +163,12 @@
         margin-right: 0;
         @include mq(600px) { margin-right: 1rem; }
     }
+}
 
-
+.gform_ajax_spinner {
+	width: 5rem;
+    height: 5rem;
+    position: relative;
+    right: -8rem;
+    top: -4.25rem;
 }

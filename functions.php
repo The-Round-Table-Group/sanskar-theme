@@ -232,3 +232,9 @@ function skv_shared_counts_location( $locations ) {
 	return $locations;
 }
 add_filter( 'shared_counts_theme_locations', 'skv_shared_counts_location' );
+
+// filter to customize the Gravity Forms spinner
+function spinner_url( $image_src, $form ) {
+    return get_template_directory_uri() . '/assets/media/spinner.gif';
+}
+add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
