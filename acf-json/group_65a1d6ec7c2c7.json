@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_65a1d718a819e",
-            "label": "Meta Link",
+            "label": "Facebook Link",
             "name": "facebook",
             "aria-label": "",
             "type": "url",
@@ -38,7 +38,7 @@
         },
         {
             "key": "field_65d77c86cfc29",
-            "label": "YouTube",
+            "label": "YouTube Link",
             "name": "youtube",
             "aria-label": "",
             "type": "url",
@@ -55,8 +55,25 @@
         },
         {
             "key": "field_6605a8bcd3920",
-            "label": "Twitter \/ X",
+            "label": "Twitter \/ X Link",
             "name": "twitter",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_660607583784e",
+            "label": "TikTok Link",
+            "name": "tiktok",
             "aria-label": "",
             "type": "url",
             "instructions": "",
@@ -89,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711646930
+    "modified": 1711671202
 }
