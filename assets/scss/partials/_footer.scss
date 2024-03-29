@@ -27,9 +27,14 @@
             .h3 {
                 max-width: 32rem;
                 margin-top: 0;
-                margin-bottom: 0;
+                margin-bottom: 1.5rem;
                 line-height: 1.3;
                 color: $white;
+                @include mq(sm) { margin-bottom: 0; }
+            }
+
+            .gform_confirmation_message_1 {
+                color: $white !important;
             }
         }
     }

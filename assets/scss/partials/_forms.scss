@@ -68,11 +68,16 @@
             background-color: $white;
         }
 
-        #input_1_1 {
+        #input_1_1,
+        #input_1_2 {
             padding: 0.5rem 0.75rem;
             border: unset;
             border-right: 1px solid $blue;
             line-height: 1.5;
+        }
+
+        #input_1_2 {
+            border-bottom: 1px solid $blue;
         }
 
         #gform_submit_button_1 {
@@ -82,6 +87,7 @@
             border: unset;
             line-height: 1.5;
             transition: $transition;
+            height: 100%;
 
             &:hover {
                 background-color: $teal;
