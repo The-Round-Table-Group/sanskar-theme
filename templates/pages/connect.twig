@@ -1,7 +1,17 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<div class="post-layout">
-    {# https://developers.facebook.com/docs/plugins/group-plugin #}
-</div>
+<section class="post-layout">
+    <div class="social-tree-wrapper">
+        {% for item in post.social_link_list %}
+            <h3>{{ item.city_name }}</h3>
+            {% for %}
+                <a class="" href="{{ item.social_link.url }}" target="_blank" rel="noopener">
+                    {{ item.social_link.title }}
+                    <span class="fa-solid {{ item.social_icon }}"></span>
+                </a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

@@ -4,7 +4,7 @@
     margin: 1.25rem auto 0;
     @include mq(lg) { padding: 1rem 3rem; }
 
-    // homepage featured post
+    // homepage featured post header
     &__featured-post {
         .featured-post-wrapper {
             display: flex;
@@ -79,46 +79,9 @@
             }
         }
     }
-    // __featured-post
+    // end featured-post
 
-    // all other pages
-    &__text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1rem;
-
-        @include mq(md) {
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 3rem;
-        }
-
-        h1 {
-            flex-shrink: 0;
-            max-width: 30rem;
-            margin: 0 auto 2rem;
-            text-align: center;
-            text-transform: uppercase;
-            line-height: 1.1;
-
-            @include mq(md) {
-                text-align: left;
-                margin: 0;
-            }
-        }
-
-        p {
-            max-width: 45rem;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            @include mq(md) { margin-left: 2rem; }
-        }
-    }
-
-    // news, contests, playlist posts
+    // all other pages/posts
     &__post-text {
         text-align: center;
 

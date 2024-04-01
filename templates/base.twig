@@ -16,9 +16,10 @@
 		{{ fn('wp_head') }}
 
         {# Open Graph Data #}
-        {% if post.title %}
-            <meta property="og:title" content="{{ post.title }}" />
-        {% endif %}
+        <meta property="og:title" content="{{ post.title }}" />
+        <meta property="og:locale" content="en_US.utf-8" />
+        <meta property="og:url" content="{{ post.link }}" />
+        <meta property="og:type" content="website" />
 
         {% if post.thumbnail.src %}
             <meta property="og:image" content="{{ post.thumbnail.src }}" />
@@ -34,10 +35,6 @@
             <meta property="og:description" content="{{ options.global_seo_description }}" />
         {% endif %}
 
-        <meta property="og:locale" content="en_US.utf-8" />
-        <meta property="og:url" content="{{ post.link }}" />
-        <meta property="og:type" content="website" />
-
         {# News links may appear on multiple pages #}
         {% if fn('is_single', 'news') %}
 			<link rel="canonical" href="{{ post.link }}">
@@ -50,7 +47,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap">
-        {# https://support.google.com/news/publisher-center/answer/9606800?sjid=13891664182919420624-NC #}
 	</head>
 
 	<body data-template="base.twig" class="{{ body_class }}">
@@ -59,10 +55,10 @@
         <header class="site-header">
             {% if is_front_page %}
                 {% include 'partials/home-header.twig' %}
-            {% elseif is_single or fn('is_page_template') %}
-                {% include 'partials/post-header.twig' %}
             {% else %}
-                {% include 'partials/default-header.twig' %}
+                <div class="site-header__post-text">
+                    <h1>{{ post.title }}</h1>
+                </div>
             {% endif %}
         </header>
 
