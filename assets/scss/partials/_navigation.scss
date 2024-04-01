@@ -24,10 +24,10 @@
         width: 0%;
         transition: width 0.3s ease-in;
 
-        @include mq(sm) {
+        @include mq(md) {
             display: flex;
             position: static;
-            max-width: 32rem;
+            max-width: 37rem;
             width: 100%;
         }
 

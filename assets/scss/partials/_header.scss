@@ -23,6 +23,13 @@
 
         .featured-title-wrapper {
             flex-shrink: 0;
+
+            &:hover {
+                .featured-title {
+                    color: $teal;
+                    transition: $transition;
+                }
+            }
         }
 
         .featured-title {
@@ -32,6 +39,7 @@
             text-align: center;
             text-transform: uppercase;
             line-height: 1.1;
+            transition: $transition;
 
             @include mq(md) {
                 text-align: left;
