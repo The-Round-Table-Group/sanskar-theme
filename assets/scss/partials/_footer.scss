@@ -51,7 +51,7 @@
         }
     }
 
-    // small footer menu
+    // multi-column footer menu
     &__menu {
         display: flex;
         flex-direction: column;
@@ -70,18 +70,22 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            max-width: 48rem;
+            max-width: 100%;
             width: 100%;
 
-            @include mq(sm) {
+            @include mq(xs) {
                 flex-direction: row;
                 justify-content: space-between;
             }
+
+            @include mq(md) { max-width: 42rem; }
         }
 
         .footer-menu {
             margin-bottom: 2rem;
-            @include mq(sm) { margin-bottom: 0; }
+            text-align: center;
+            @include mq(xs) { text-align: left; }
+            @include mq(md) { margin-bottom: 0; }
 
             .footer-menu-link {
                 display: block;
@@ -102,6 +106,12 @@
             align-items: center;
             max-width: 22.5rem;
             width: 100%;
+            margin-top: 2rem;
+
+            @include mq(md) {
+                margin-top: 0;
+                margin-left: 2rem;
+            }
 
             .fa-brands {
                 font-size: 1.85rem;
@@ -116,10 +126,7 @@
         }
     }
 
-
-
-
-
+    // copyright and policy links
     &__policies {
         display: flex;
         flex-direction: column;
