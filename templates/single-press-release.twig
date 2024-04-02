@@ -1,0 +1,30 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<article class="post-layout">
+    {% if post.image_or_video == 'image' %}
+        <img class="post-image" src="{{ post.thumbnail.src }}" alt="{{ post.title }}" />
+    {% endif %}
+
+    {{ post.content }}
+
+    <div class="share-bar">
+        <p>Share on:</p>
+        {{ fn('do_action', 'skv_post_intro') }}
+    </div>
+
+    <section class="author-block">
+        <div class="author-block__info">
+            <img src="{{ post.author.author_image.url }}" alt="{{ post.author.name }}" />
+            <div>
+                <p class="h5">{{ post.author.name }}</p>
+                <p><strong>Date:</strong> {{ post.date }}</p>
+            </div>
+        </div>
+
+        <div class="author-block__bio">
+            <p>{{ post.author.description }}</p>
+        </div>
+    </section>
+</article>
+{% endblock %}

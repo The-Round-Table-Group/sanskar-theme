@@ -1,0 +1,25 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<section class="post-block">
+    <div class="post-block__post-row">
+        {% for release in press_releases %}
+            <a class="post-card" href="{{ release.link }}">
+                <div class="date-author">
+                    <time>{{ release.date }}</time>
+                </div>
+
+                {% if release.card_image.url %}
+                    <img src="{{ release.card_image.url }}" alt="{{ release.title }}" />
+                {% else %}
+                    <img src="{{ release.thumbnail.src }}" alt="{{ release.title }}" />
+                {% endif %}
+
+                <h3 class="h4">{{ release.title }}</h3>
+
+                <p class="excerpt">{{ release.excerpt.read_more('') }}</p>
+            </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -19,7 +19,7 @@ $args = [
 	'labels'              => $labels,
 	'hierarchical'        => false,
 	'description'         => '',
-	'taxonomies'          => [ 'press-release-tax' ],
+	'taxonomies'          => [],
 	'public'              => true,
 	'show_ui'             => true,
 	'show_in_menu'        => true,
@@ -37,28 +37,3 @@ $args = [
 	'supports'            => [ 'title', 'thumbnail', 'editor', 'author', 'excerpt' ],
 ];
 register_post_type( 'press-release', $args );
-
-$tax_labels = [
-	'name' 				=> _x( 'Press Release Tags', 'skv' ),
-	'singular_name' 	=> _x( 'Press Release Tag', 'skv' ),
-	'search_items' 		=> __( 'Search Press Release Tags', 'skv' ),
-	'all_items' 		=> __( 'All Press Release Tags', 'skv' ),
-	'edit_item' 		=> __( 'Edit Press Release Tag', 'skv' ),
-	'update_item' 		=> __( 'Update Press Release Tag', 'skv' ),
-	'add_new_item' 		=> __( 'Add Press Release Tag', 'skv' ),
-	'new_item_name' 	=> __( 'Create Press Release Tag', 'skv' ),
-	'menu_name' 		=> __( 'Press Release Tags', 'skv' ),
-	'parent_item'		=> __( 'Parent Press Release Tag:', 'skv' ),
-];
-
-$tax_args = [
-	'hierarchical' 	    => true,
-	'labels' 	    	=> $tax_labels,
-	'show_ui' 	    	=> true,
-	'show_admin_column' => true,
-	'has_archive'		=> false,
-	'query_var'	    	=> true,
-	'show_in_rest'		=> true,
-	'rewrite'			=> true,
-];
-register_taxonomy( 'press-release-tax', 'press-release', $tax_args );
