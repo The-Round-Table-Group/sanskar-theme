@@ -9,7 +9,7 @@
             <div class="social-grid">
                 {% for social in state.links %}
                     <a class="social-link-card" href="{{ social.link.url }}" target="_blank" rel="noopener">
-                        {{ social.link.title }}
+                        <span class="h5">{{ social.link.title }}</span>
                         <span class="fa-brands {{ social.icon }}"></span>
                     </a>
                 {% endfor %}

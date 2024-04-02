@@ -1,6 +1,6 @@
 {
     "key": "group_660303610a2a4",
-    "title": "Featured Header",
+    "title": "Header Media",
     "fields": [
         {
             "key": "field_6603039c5f45c",
@@ -8,7 +8,7 @@
             "name": "image_or_video",
             "aria-label": "",
             "type": "radio",
-            "instructions": "If using a video, remember to add a \"Featured Image\" section on the right for the card listing.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -129,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712015491
+    "modified": 1712071871
 }

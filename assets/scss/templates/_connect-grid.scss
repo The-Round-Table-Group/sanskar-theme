@@ -18,4 +18,15 @@
     }
 }
 
-.social-link-card {}
+.social-link-card {
+    border: 1px solid $blue;
+    padding: 1.25rem;
+
+    &:hover {
+        background-color: $blue;
+
+        .h5 {
+            color: $white;
+        }
+    }
+}
