@@ -24,7 +24,7 @@
             {% if news.image_or_video == 'image' %}
                 <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
             {% else %}
-                <video controls poster="{{ news.featured_video_poster.url }}" preload="metadata">
+                <video controls poster="{{ news.featured_video_poster.url }}" preload="none">
                     <source src="{{ news.featured_video_url }}" type="video/mp4">
                 </video>
             {% endif %}

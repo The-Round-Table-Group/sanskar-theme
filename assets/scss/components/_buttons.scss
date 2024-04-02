@@ -6,7 +6,8 @@
     color: $blue;
     background-color: $white;
 
-    &--arrow {
+    &--arrow,
+    &--border-arrow {
         @extend .primary-button;
         padding: 0.45rem 1.5rem 0.45rem 1.25rem;
     }
@@ -28,5 +29,19 @@
         left: 0.35rem;
         transition: $transition;
         color: $blue;
+    }
+
+    &--border-arrow {
+        border: 1px solid $white;
+        background-color: $blue;
+        color: $white;
+
+        span { color: $white; }
+
+        &:hover {
+            background-color: $white;
+            color: $blue;
+            span { color: $blue; }
+        }
     }
 }
