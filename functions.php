@@ -139,6 +139,7 @@ class SanskarSite extends Timber\Site {
 	function register_post_types() {
 		include_once( 'custom-post-types/post-type-contest.php' );
         include_once( 'custom-post-types/post-type-playlist.php' );
+        include_once( 'custom-post-types/post-type-press-release.php' );
         include_once( 'custom-post-types/post-type-news.php' );
 	}
 
