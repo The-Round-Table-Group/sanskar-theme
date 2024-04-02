@@ -11,7 +11,7 @@
 
         &__subscribe {
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -21,7 +21,14 @@
             @include mq(sm) {
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: flex-start;
                 text-align: left;
+            }
+
+            .subscribe-block {
+                margin-top: 0;
+                margin-bottom: 2rem;
+                @include mq(sm) { margin-top: 1.85rem; }
             }
 
             .h3 {
@@ -38,10 +45,80 @@
             }
 
             .primary-button--border-arrow {
-                margin-top: 2rem;
+                margin-top: 1rem;
+                @include mq(sm) { margin-top: 2rem; }
             }
         }
     }
+
+    // small footer menu
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @include mq(md) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .footer-menu-wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 48rem;
+            width: 100%;
+
+            @include mq(sm) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-menu {
+            margin-bottom: 2rem;
+            @include mq(sm) { margin-bottom: 0; }
+
+            .footer-menu-link {
+                display: block;
+                color: $white;
+                padding: 0.25rem;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 5px;
+                }
+            }
+        }
+
+        .social-menu {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 22.5rem;
+            width: 100%;
+
+            .fa-brands {
+                font-size: 1.85rem;
+                color: $white;
+                transition: $transition;
+
+                &:hover {
+                    color: $teal;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+
+
+
+
 
     &__policies {
         display: flex;
@@ -63,9 +140,7 @@
             color: $white;
             @include mq(sm) { text-align: left; }
 
-            a {
-                color: $white;
-            }
+            a { color: $white; }
         }
 
         .policies {

@@ -139,7 +139,9 @@
 
 // Contest Forms
 #gform_wrapper_2,
+#gform_wrapper_3,
 #gform_wrapper_5,
+#gform_wrapper_6,
 #gform_wrapper_7,
 #gform_wrapper_8,
 #gform_wrapper_9 {
@@ -152,6 +154,8 @@
     }
 
     select, input { max-width: 16.15rem; }
+
+    textarea { width: 100%; }
 
     .gfield--type-email,
     .gfield--type-phone {
@@ -177,4 +181,14 @@
     position: relative;
     right: -8rem;
     top: -4.25rem;
+}
+
+#gform_wrapper_3 {
+    max-width: 35rem;
+    @include mq(lg) { max-width: 100%; }
+
+    #input_3_6 {
+        max-width: 33.5rem;
+        @include mq(lg) { max-width: 100%; }
+    }
 }

@@ -18,6 +18,40 @@
             </div>
         </div>
 
+        <div class="site-footer__menu">
+            <div class="footer-menu-wrap">
+                {% for menu in options.menu_sections %}
+                    <div class="footer-menu" role="navigation">
+                        {% for item in menu.menus %}
+                            <a class="footer-menu-link" href="{{ item.menu_item.url }}">{{ item.menu_item.title }}</a>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="social-menu" role="navigation">
+                <a class="social-link" href="{{ options.facebook }}" target="_blank" rel="noopener" title="Sanskar Savvy - Facebook">
+                    <span class="fa-brands fa-facebook-square"></span>
+                </a>
+
+                <a class="social-link" href="{{ options.instagram }}" target="_blank" rel="noopener" title="Sanskar Savvy - Instagram">
+                    <span class="fa-brands fa-instagram"></span>
+                </a>
+
+                <a class="social-link" href="{{ options.twitter }}" target="_blank" rel="noopener" title="Sanskar Savvy - Twitter">
+                    <span class="fa-brands fa-x-twitter"></span>
+                </a>
+
+                <a class="social-link" href="{{ options.tiktok }}" target="_blank" rel="noopener" title="Sanskar Savvy - TikTok">
+                    <span class="fa-brands fa-tiktok"></span>
+                </a>
+
+                <a class="social-link" href="{{ options.youtube }}" target="_blank" rel="noopener" title="Sanskar Savvy - YouTube">
+                    <span class="fa-brands fa-youtube"></span>
+                </a>
+            </div>
+        </div>
+
         <div class="site-footer__policies">
             <p class="copyright">
                 &copy; {{ site_year }}
