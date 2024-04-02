@@ -7,6 +7,7 @@
             <a class="post-card" href="{{ release.link }}">
                 <div class="date-author">
                     <time>{{ release.date }}</time>
+                    <span>{{ release.author.name }}</span>
                 </div>
 
                 {% if release.card_image.url %}
