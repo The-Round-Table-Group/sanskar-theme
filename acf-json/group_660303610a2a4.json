@@ -1,6 +1,6 @@
 {
     "key": "group_660303610a2a4",
-    "title": "Post Header",
+    "title": "Featured Header",
     "fields": [
         {
             "key": "field_6603039c5f45c",
@@ -114,9 +114,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "!=",
-                "value": "page"
+                "value": "front-page.php"
             }
         ]
     ],
@@ -129,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711479173
+    "modified": 1712015491
 }

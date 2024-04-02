@@ -1,6 +1,6 @@
 {
     "key": "group_66044b3aad8f2",
-    "title": "Side Bar - Promoted Content",
+    "title": "Sidebar - Promoted Content",
     "fields": [
         {
             "key": "field_66044b3b8497a",
@@ -103,5 +103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711642147
+    "modified": 1712015548
 }

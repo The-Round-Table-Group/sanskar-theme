@@ -1,7 +1,21 @@
 // grid for the Connect page social links
 .social-tree-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 22rem));
-    row-gap: 2rem;
-    column-gap: 2rem;
+    margin: 3rem auto;
+    max-width: 100%;
+
+    .social-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 22rem));
+        row-gap: 2rem;
+        column-gap: 2rem;
+        margin: 0 auto;
+    }
+
+    .city-name {
+        max-width: 20rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $blue;
+    }
 }
+
+.social-link-card {}

@@ -11,7 +11,7 @@
         </div>
 
         <div class="post-block__post-row">
-            {% for contest in contest_block %}
+            {% for contest in featured_contests %}
                 <a class="post-card" href="{{ contest.link }}">
                     <div class="date-author">
                         <time>{{ contest.date }}</time>
@@ -102,7 +102,7 @@
         </div>
 
         <div class="post-block__post-row">
-            {% for playlist in playlist_block %}
+            {% for playlist in featured_playlists %}
                 <a class="post-card" href="{{ playlist.link }}">
                     <div class="date-author">
                         <time>{{ playlist.date }}</time>

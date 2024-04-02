@@ -1,6 +1,6 @@
 {
     "key": "group_66048642e4b9a",
-    "title": "Contest Sidebar",
+    "title": "Sidebar - Contests",
     "fields": [
         {
             "key": "field_66048643ac4b4",
@@ -41,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711572812
+    "modified": 1712015568
 }

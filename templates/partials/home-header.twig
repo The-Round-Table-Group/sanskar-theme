@@ -1,30 +1,34 @@
+{% set count = 1 %}
 <article class="site-header__featured-post">
-    {% for news in featured_news %}
-        <div class="featured-post-wrapper">
-            <a class="featured-title-wrapper" href="{{ news.link }}">
-                <h1 class="featured-title">{{ news.title }}</h1>
-            </a>
+    {% for news in featured_article %}
+        {% if count == 1 %}
+            <div class="featured-post-wrapper">
+                <a class="featured-title-wrapper" href="{{ news.link }}">
+                    <h1 class="featured-title">{{ news.title }}</h1>
+                </a>
 
-            <div class="featured-content">
-                <p class="paragraph">{{ news.excerpt.read_more('') }}</p>
-                <div class="info">
-                    <p><strong>Author:</strong> {{ news.author.name }}</p>
-                    <p><strong>Date:</strong> {{ news.date }}</p>
-                    <p><strong>Tags:</strong>
-                        {% for term in news.terms %}
-                            <a class="term" href="news/?_news_tag={{ term.slug }}">{{ term.name }}</a>
-                        {% endfor %}
-                    </p>
+                <div class="featured-content">
+                    <p class="paragraph">{{ news.excerpt.read_more('') }}</p>
+                    <div class="info">
+                        <p><strong>Author:</strong> {{ news.author.name }}</p>
+                        <p><strong>Date:</strong> {{ news.date }}</p>
+                        <p><strong>Tags:</strong>
+                            {% for term in news.terms %}
+                                <a class="term" href="news/?_news_tag={{ term.slug }}">{{ term.name }}</a>
+                            {% endfor %}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        {% if news.image_or_video == 'image' %}
-            <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
-        {% else %}
-            <video controls poster="{{ news.featured_video_poster.url }}" preload="metadata">
-                <source src="{{ news.featured_video_url }}" type="video/mp4">
-            </video>
+            {% if news.image_or_video == 'image' %}
+                <img src="{{ news.thumbnail.src }}" alt="{{ news.title }}" />
+            {% else %}
+                <video controls poster="{{ news.featured_video_poster.url }}" preload="metadata">
+                    <source src="{{ news.featured_video_url }}" type="video/mp4">
+                </video>
+            {% endif %}
+            {% set count = count + 1 %}
         {% endif %}
     {% endfor %}
 </article>

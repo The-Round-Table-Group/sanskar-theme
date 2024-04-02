@@ -3,14 +3,17 @@
 {% block content %}
 <section class="post-layout">
     <div class="social-tree-wrapper">
-        {% for item in post.social_link_list %}
-            <h3>{{ item.city_name }}</h3>
-            {% for %}
-                <a class="" href="{{ item.social_link.url }}" target="_blank" rel="noopener">
-                    {{ item.social_link.title }}
-                    <span class="fa-solid {{ item.social_icon }}"></span>
-                </a>
-            {% endfor %}
+        {% for state in post.social_link_list %}
+            <h3 class="city-name">{{ state.state_name }}</h3>
+
+            <div class="social-grid">
+                {% for social in state.links %}
+                    <a class="social-link-card" href="{{ social.link.url }}" target="_blank" rel="noopener">
+                        {{ social.link.title }}
+                        <span class="fa-brands {{ social.icon }}"></span>
+                    </a>
+                {% endfor %}
+            </div>
         {% endfor %}
     </div>
 </section>

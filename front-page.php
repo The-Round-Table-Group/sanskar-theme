@@ -4,8 +4,8 @@ $context = Timber::get_context();
 $post = Timber::get_post();
 $context['post'] = $post;
 
-// featured article
-$context['featured_news'] = Timber::get_posts([
+// Featured article
+$context['featured_article'] = Timber::get_posts([
     'post_type'      => 'news',
     'posts_per_page' => 1,
     'tax_query'      => [[
@@ -15,18 +15,22 @@ $context['featured_news'] = Timber::get_posts([
     ]]
 ]);
 
-// featured world cup articles
-$context['world_cup_news'] = Timber::get_posts([
-    'post_type'      => 'news',
+// Featured Contests
+$context['featured_contests'] = Timber::get_posts([
+    'post_type'      => 'contest',
     'posts_per_page' => 3,
+    'post_status'    => 'publish',
+    'order'          => 'DESC',
+    'orderby'        => 'date',
+    'facetwp'        => false,
     'tax_query'      => [[
-        'taxonomy' => 'news-tax',
+        'taxonomy' => 'contest-tax',
         'field'    => 'slug',
-        'terms'    => 'world-cup',
+        'terms'    => 'featured'
     ]]
 ]);
 
-// all news
+// 6 featured news articles
 $context['news'] = Timber::get_posts([
     'post_type'      => 'news',
     'posts_per_page' => 6,
@@ -40,21 +44,7 @@ $context['news'] = Timber::get_posts([
     ]]
 ]);
 
-// all contests
-$context['contests'] = Timber::get_posts([
-    'post_type'      => 'contest',
-    'posts_per_page' => 3,
-    'order'          => 'DESC',
-    'orderby'        => 'date',
-    'facetwp'        => false,
-    'tax_query'      => [[
-        'taxonomy' => 'contest-tax',
-        'field'    => 'slug',
-        'terms'    => 'featured',
-    ]]
-]);
-
-// all sidebar contests
+// 6 featured sidebar contests
 $context['sidebar_contests'] = Timber::get_posts([
     'post_type'      => 'contest',
     'posts_per_page' => 6,
@@ -62,6 +52,32 @@ $context['sidebar_contests'] = Timber::get_posts([
     'meta_value'     => true,
     'order'          => 'DESC',
     'orderby'        => 'date'
+]);
+
+// Featured Spotify playlists
+$context['featured_playlists'] = Timber::get_posts([
+    'post_type'      => 'playlist',
+    'posts_per_page' => 3,
+    'post_status'    => 'publish',
+    'order'          => 'DESC',
+    'orderby'        => 'date',
+    'facetwp'        => false,
+    'tax_query'      => [[
+        'taxonomy' => 'playlist-tax',
+        'field'    => 'slug',
+        'terms'    => 'featured'
+    ]]
+]);
+
+// featured world cup articles
+$context['world_cup_news'] = Timber::get_posts([
+    'post_type'      => 'news',
+    'posts_per_page' => 3,
+    'tax_query'      => [[
+        'taxonomy' => 'news-tax',
+        'field'    => 'slug',
+        'terms'    => 'world-cup',
+    ]]
 ]);
 
 $templates = ['pages/home.twig'];
