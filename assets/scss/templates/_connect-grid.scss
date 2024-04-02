@@ -23,7 +23,11 @@
     border: 1px solid $blue;
     padding: 1.25rem;
 
-    .h5 { margin: 0; }
+    .h5 {
+        display: inline-block;
+        max-width: 17rem;
+        margin: 0;
+    }
 
     .fa-brands {
         position: absolute;
