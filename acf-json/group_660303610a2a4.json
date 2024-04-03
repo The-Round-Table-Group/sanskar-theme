@@ -114,9 +114,14 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "!=",
-                "value": "front-page.php"
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "page"
             }
         ]
     ],
@@ -129,5 +134,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712071871
+    "modified": 1712161103
 }
