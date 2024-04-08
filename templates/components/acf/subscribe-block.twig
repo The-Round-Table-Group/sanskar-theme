@@ -1,0 +1,32 @@
+{# subscribe call to action #}
+<div class="subscribe-container">
+    <div class="subscribe-header">
+        <h3 class="h4">{{ options.subscribe_header }}</h3>
+        <p>{{ options.subscribe_sub_header }}</p>
+    </div>
+
+    <div class="subscribe-form">
+        {{ fn('do_shortcode', '[gravityform id="1" title="false" description="false" ajax="true"]') }}
+        <div class="form-social-links">
+            <a class="social-link" href="{{ options.facebook }}">
+                <span class="fa-brands fa-facebook-square"></span>
+            </a>
+
+            <a class="social-link" href="{{ options.twitter }}">
+                <span class="fa-brands fa-x-twitter"></span>
+            </a>
+
+            <a class="social-link" href="{{ options.linkedin }}">
+                <span class="fa-brands fa-linkedin"></span>
+            </a>
+
+            <a class="social-link" href="{{ options.tiktok }}">
+                <span class="fa-brands fa-tiktok"></span>
+            </a>
+
+            <a class="social-link" href="{{ options.youtube }}">
+                <span class="fa-brands fa-youtube"></span>
+            </a>
+        </div>
+    </div>
+</div>

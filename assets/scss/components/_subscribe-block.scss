@@ -1,0 +1,37 @@
+.subscribe-container {
+    max-width: 65rem;
+    margin: 3rem auto;
+    padding: 2.25rem;
+    border: 1px solid $blue;
+
+    .subscribe-header {
+        text-align: center;
+
+        h3, p {
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    .subscribe-form {
+        max-width: 40rem;
+
+        form {
+            max-width: 25rem;
+            width: 100%;
+        }
+
+        .form-social-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .social-link {
+                font-size: 1.5rem;
+                color: $blue;
+                &:hover { color: $teal; }
+            }
+        }
+    }
+}

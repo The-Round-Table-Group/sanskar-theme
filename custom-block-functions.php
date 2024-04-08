@@ -20,19 +20,20 @@ if ( function_exists('acf_register_block_type') ) :
 	];
 	acf_register_block_type( $button_block );
 
-    $post_block = [
-		'name' => 'post-block',
-		'title' => __( 'Post Block', 'skv' ),
-		'description' => __( 'Generates the 3 most recent posts from the chosen post type.', 'skv' ),
+    // subscribe block
+    $subscribe_block = [
+		'name' => 'subscribe-block',
+		'title' => __( 'Subscribe CTA', 'skv' ),
+		'description' => __( 'Subscribe call to action block.', 'skv' ),
 		'render_callback' => 'custom_block_callback',
 		'category' => 'skv-blocks',
 		'align' => 'wide',
 		'icon' => 'insert',
 		'mode' => 'auto',
 		'supports' => [ 'mode' => true ],
-		'keywords' => [ 'skv', 'block', 'post', 'recent', 'news', 'contest', 'playlist' ]
+		'keywords' => [ 'skv', 'block' ]
 	];
-	acf_register_block_type( $post_block );
+	acf_register_block_type( $subscribe_block );
 
     // $ = [
 	// 	'name' => '',
