@@ -41,7 +41,18 @@ class SanskarSite extends Timber\Site {
             .column-comments,
 			#adminmenu .update-plugins { display: none !important; }
 		</style>
-		<?php
+
+        <?php
+        // check for Shane or Nam to publish post
+        $uid = get_current_user_id();
+        if ( $uid != 1 && $uid != 4 ) { ?>
+            <style type="text/css">
+                .editor-post-publish-button__button {
+                    display: none !important;
+                }
+            </style>
+        <?php
+        }
 	}
 
 	// enqueue styles & scripts
