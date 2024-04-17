@@ -1,7 +1,7 @@
 [id^="gform_wrapper_"]:not(#gform_wrapper_1) {
     input, label, textarea,
     select, option, legend {
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-family: $montserrat;
         font-weight: $regular;
     }
@@ -99,7 +99,7 @@
     }
 }
 
-// uses subscribe form in sidebar
+// sidebar subscribe form
 .sidebar-subscribe {
     #gform_wrapper_1 {
         max-width: 18rem;
@@ -113,7 +113,7 @@
             margin-top: 0.25rem;
             margin-bottom: 0.75rem;
             font-family: $montserrat;
-            font-size: 0.9375rem;
+            font-size: 1.125rem;
             padding: 0.5rem;
             border: 1px solid $blue;
         }
@@ -211,4 +211,16 @@
         padding: 0.75rem 1.125rem;
         margin-left: 0.5rem;
     }
+}
+
+/**
+  * Global Settings
+*/
+.gform_submission_error {
+    font-size: 1.125rem !important;
+}
+
+.gform_confirmation_message {
+    font-family: $montserrat;
+    font-size: 1.25rem;
 }

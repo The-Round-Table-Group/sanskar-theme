@@ -55,10 +55,15 @@
             max-width: 100%;
 
             .news-link:hover h3 { color: $teal; }
-
             .h5 { margin-top: 0; }
             .author-name { padding-right: 3.5rem; }
             .tags { margin-bottom: 0; }
+
+            .author-name,
+            .news-date,
+            .tags {
+                font-size: 1rem;
+            }
         }
     }
 
