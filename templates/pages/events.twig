@@ -1,0 +1,40 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <section class="post-block">
+        <div class="post-block__page-header">
+            <p class="h4">Filter by Tag</p>
+            <div class="tag-filter">
+                {{ fn('do_shortcode', '[facetwp facet="event_tags"]') }}
+            </div>
+        </div>
+
+        <div class="post-block__post-row facetwp-template">
+            {% for event in events %}
+                <a class="post-card" href="{{ event.link }}">
+                    <div class="date-author">
+                        <time>{{ event.date }}</time>
+                    </div>
+
+                    {% if event.card_image.url %}
+                        <img src="{{ event.card_image.url }}" alt="{{ event.title }}" />
+                    {% else %}
+                        <img src="{{ event.thumbnail.src }}" alt="{{ event.title }}" />
+                    {% endif %}
+
+                    <h3 class="h4">{{ event.title }}</h3>
+
+                    <p class="excerpt">{{ event.excerpt.read_more('') }}</p>
+
+                    <p class="terms">
+                        {% for term in event.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    {{ post.content }}
+{% endblock %}

@@ -43,7 +43,7 @@ class SanskarSite extends Timber\Site {
 		</style>
 
         <?php
-        // check for Shane or Nam to publish post
+        // check for Shane(1) or Nam(4) to publish post
         $uid = get_current_user_id();
         if ( $uid != 1 && $uid != 4 ) { ?>
             <style type="text/css">
@@ -149,9 +149,10 @@ class SanskarSite extends Timber\Site {
 	// add custom post types
 	function register_post_types() {
 		include_once( 'custom-post-types/post-type-contest.php' );
+        include_once( 'custom-post-types/post-type-event.php' );
+        include_once( 'custom-post-types/post-type-news.php' );
         include_once( 'custom-post-types/post-type-playlist.php' );
         include_once( 'custom-post-types/post-type-press-release.php' );
-        include_once( 'custom-post-types/post-type-news.php' );
 	}
 
 	// remove unused items from admin menu
