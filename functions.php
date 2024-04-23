@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Load Timber
  * Initialize Timber
@@ -206,17 +205,3 @@ function spinner_url( $image_src, $form ) {
     return get_template_directory_uri() . '/assets/media/spinner.gif';
 }
 add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
-
-// Media Kit download
-function skv_media_kit_download() {
-    $file_url = get_field('media_kit_url', 'option');
-    ?>
-    <div class="media-kit-download">
-        <a class="primary-button--arrow" href="<?= $file_url; ?>" download>
-            Download Media Kit
-            <span class="fa-solid fa-arrow-right"></span>
-        </a>
-    </div>
-    <?php
-}
-add_action( 'gform_after_submission_12', 'skv_media_kit_download', 10, 2 );
