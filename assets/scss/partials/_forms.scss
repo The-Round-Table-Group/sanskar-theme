@@ -1,7 +1,7 @@
 [id^="gform_wrapper_"]:not(#gform_wrapper_1) {
     input, label, textarea,
-    select, option, legend {
-        font-size: 1.2rem;
+    select, option, legend, .gfield_label {
+        font-size: 1.125rem;
         font-family: $montserrat;
         font-weight: $regular;
     }
@@ -32,6 +32,7 @@
     .gfield_label, label {
         display: block;
         padding-bottom: 0.25rem;
+        font-weight: $semibold;
     }
 
     .gfield_required { display: none; }
