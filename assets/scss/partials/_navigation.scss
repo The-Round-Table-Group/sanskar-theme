@@ -27,15 +27,15 @@
         @include mq(md) {
             display: flex;
             position: static;
-            max-width: 42rem;
+            max-width: 43rem;
             width: 100%;
         }
 
         .menu-link {
             position: relative;
             font-family: $oswald;
-            font-size: 1.4rem;
-            font-weight: 600;
+            font-size: 1.45rem;
+            font-weight: $semibold;
             &:hover { color: $teal; }
             &.active { color: $teal; }
         }

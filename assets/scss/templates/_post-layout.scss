@@ -23,6 +23,7 @@
             margin-top: 1rem;
             margin-bottom: 0;
             @include mq(md) { height: 28rem; }
+            @include mq(lg) { height: 35rem; }
         }
     }
 
@@ -73,33 +74,31 @@
                 max-width: 15rem;
             }
 
-            .h5 { margin-top: 0; }
-
-            p {
-                margin-top: 0.85rem;
-                margin-bottom: 0;
-                @include mq(xxs) { margin-top: 1.2rem; }
-            }
-
             img {
-                width: 8.75rem;
-                height: 8.75rem;
+                width: 9rem;
+                height: 9rem;
                 object-fit: cover;
                 border-radius: $circle;
                 margin-bottom: 0;
 
                 @include mq(xxs) {
-                    width: 10rem;
-                    height: 10rem;
+                    width: 12rem;
+                    height: 12rem;
                 }
-
-                @include mq(sm) { margin-bottom: 2.5rem; }
             }
         }
 
         &__bio {
             max-width: 45rem;
-            p { margin-bottom: 0; }
+
+            .h4, p { margin-top: 0; }
+
+            .h4 { margin-bottom: 0.65rem; }
+
+            p {
+                margin-bottom: 1.25rem;
+                &:last-of-type { margin-bottom: 0; }
+            }
         }
     }
 }
