@@ -13,21 +13,18 @@
             align-items: center;
             margin-bottom: 2rem;
 
-            @include mq(md) {
+            @include mq(960px) {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
                 margin-bottom: 3rem;
             }
-        }
 
-        .featured-title-wrapper {
-            flex-shrink: 0;
-
+            // when hovering block, change title color
             &:hover {
-                .featured-title {
-                    color: $teal;
+                > .featured-title {
                     transition: $transition;
+                    color: $teal;
                 }
             }
         }
@@ -41,7 +38,7 @@
             line-height: 1.1;
             transition: $transition;
 
-            @include mq(md) {
+            @include mq(960px) {
                 text-align: left;
                 margin: 0;
             }
@@ -51,7 +48,7 @@
             max-width: 100%;
             margin-left: 0;
 
-            @include mq(md) {
+            @include mq(960px) {
                 max-width: 45rem;
                 margin-left: 2rem;
             }
@@ -66,6 +63,7 @@
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
+                max-width: 35rem;
 
                 p, span {
                     font-size: 1rem;
