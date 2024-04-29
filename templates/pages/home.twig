@@ -34,8 +34,10 @@
         <div class="split-column__news">
             {% for news_post in news %}
                 <div class="news-container">
-                    <img class="news-image-desktop" src="{{ news_post.card_image.url }}" alt="{{ news_post.title }}" />
-                    <img class="news-image-mobile" src="{{ news_post.thumbnail.src }}" alt="{{ news_post.title }}" />
+                    <a class="image-link" href="{{ news_post.link }}">
+                        <img class="news-image-desktop" src="{{ news_post.card_image.url }}" alt="{{ news_post.title }}" />
+                        <img class="news-image-mobile" src="{{ news_post.thumbnail.src }}" alt="{{ news_post.title }}" />
+                    </a>
 
                     <div class="news-info">
                         <a class="news-link" href="{{ news_post.link }}">

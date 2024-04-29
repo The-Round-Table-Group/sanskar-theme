@@ -54,8 +54,17 @@
         .news-info {
             max-width: 100%;
 
-            .news-link:hover h3 { color: $teal; }
-            .h5 { margin-top: 0; }
+            .news-link h3 {
+                transition: $transition;
+
+                &:hover {
+                    transition: $transition;
+                    color: $teal;
+                }
+
+                &.h5 { margin-top: 0; }
+            }
+
             .author-name { padding-right: 3.5rem; }
             .tags { margin-bottom: 0; }
 
@@ -65,9 +74,7 @@
                 font-size: 1rem;
             }
 
-            p {
-                margin-bottom: 1.25rem;
-            }
+            p { margin-bottom: 1.25rem; }
         }
     }
 
