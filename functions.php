@@ -205,3 +205,10 @@ function spinner_url( $image_src, $form ) {
     return get_template_directory_uri() . '/assets/media/spinner.gif';
 }
 add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
+
+// force all Gravity Forms to use AJAX
+function setup_form_args( $form_args ) {
+    $form_args['ajax'] = true;
+    return $form_args;
+}
+add_filter( 'gform_form_args', 'setup_form_args' );
