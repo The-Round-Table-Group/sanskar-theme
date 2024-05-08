@@ -212,3 +212,15 @@ function setup_form_args( $form_args ) {
     return $form_args;
 }
 add_filter( 'gform_form_args', 'setup_form_args' );
+
+// prevent logout
+function sks_yr_logon( $expirein ) {
+    return 31556926;
+}
+add_filter( 'auth_cookie_expiration', 'sks_yr_logon' );
+
+// no autosave
+function disable_autosave() {
+    wp_deregister_script( 'autosave' );
+}
+add_action( 'admin_init', 'disable_autosave' );
