@@ -1,0 +1,34 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <section class="post-block">
+        <div class="post-block__post-row facetwp-template">
+            {% for guide in new_york_guides_archive %}
+                <a class="post-card" href="{{ guide.link }}">
+                    <div class="date-author">
+                        <time>{{ guide.date }}</time>
+                        <span>{{ guide.author.name }}</span>
+                    </div>
+
+                    {% if guide.card_image.url %}
+                        <img src="{{ guide.card_image.url }}" alt="{{ guide.title }}" />
+                    {% else %}
+                        <img src="{{ guide.thumbnail.src }}" alt="{{ guide.title }}" />
+                    {% endif %}
+
+                    <h3 class="h4">{{ guide.title }}</h3>
+
+                    <p class="excerpt">{{ guide.excerpt.read_more('') }}</p>
+
+                    <p class="terms">
+                        {% for term in guide.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    {{ post.content }}
+{% endblock %}

@@ -1,23 +1,14 @@
 <aside class="split-column__ads">
     <div class="promotion">
         <h4>Featured Events</h4>
-        {% if options.promoted_content_image.url %}
-            <img src="{{ options.promoted_content_image.url }}" alt="Promotion" />
+        {% for promo in options.homepage_promoted_events %}
+            <img src="{{ promo.promo_image.url }}" alt="Promotion" />
 
-            <a class="primary-button--arrow link-one" href="{{ options.promoted_link.url }}">
-                {{ options.promoted_link.title }}
+            <a class="primary-button--arrow" href="{{ promo.promo_link.url }}">
+                {{ promo.promo_link.title }}
                 <span class="fa-solid fa-arrow-right"></span>
             </a>
-        {% endif %}
-
-        {% if options.promoted_content_image_two.url %}
-            <img src="{{ options.promoted_content_image_two.url }}" alt="Promotion" />
-
-            <a class="primary-button--arrow" href="{{ options.promoted_content_link_two.url }}">
-                {{ options.promoted_content_link_two.title }}
-                <span class="fa-solid fa-arrow-right"></span>
-            </a>
-        {% endif %}
+        {% endfor %}
     </div>
 
     <div class="contests">

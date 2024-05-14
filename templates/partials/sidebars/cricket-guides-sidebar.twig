@@ -1,0 +1,30 @@
+<aside class="split-column__ads">
+    <div class="promotion">
+        <h4>Featured Events</h4>
+        {% for promo in options.cricket_guide_promoted_events %}
+            <img src="{{ promo.promo_image.url }}" alt="Promotion" />
+
+            <a class="primary-button--arrow" href="{{ promo.promo_link.url }}">
+                {{ promo.promo_link.title }}
+                <span class="fa-solid fa-arrow-right"></span>
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="contests">
+        <p class="h4">Featured Contests</p>
+        {% set count = 1 %}
+        {% for contest in sidebar_contests %}
+            <div class="contest-info">
+                <p class="count">0{{ count }}</p>
+                <a class="contest-link" href="{{ contest.link }}">{{ contest.title }}</a>
+            </div>
+            {% set count = count + 1 %}
+        {% endfor %}
+    </div>
+
+    <div class="sidebar-subscribe">
+        <p class="h4">VIP Newsletter</p>
+        {{ fn('do_shortcode', '[gravityform id="1" title="false" description="false" ajax="true"]') }}
+    </div>
+</aside>

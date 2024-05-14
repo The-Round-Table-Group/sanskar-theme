@@ -64,7 +64,7 @@
             {% endfor %}
         </div>
 
-        {% include '/templates/partials/sidebar.twig' %}
+        {% include '/templates/partials/sidebars/sidebar.twig' %}
     </section>
 
     {# Featured Spotify Playlists #}
@@ -98,7 +98,7 @@
         </div>
     </section>
 
-    {# Featured Cricket Updates #}
+    {# Featured World Cup Cricket News #}
     <section class="post-block">
         <div class="post-block__header">
             <a class="post-block__header--link" href="/news/?_news_tag=cricket">
@@ -106,6 +106,38 @@
             </a>
 
             <a class="all-posts-link" href="/news/?_news_tag=cricket">
+                See All <span class="fa-solid fa-arrow-right"></span>
+            </a>
+        </div>
+
+        <div class="post-block__post-row">
+            {% for news in world_cup_news %}
+                <a class="post-card" href="{{ news.link }}">
+                    <div class="date-author">
+                        <time>{{ news.date }}</time>
+                        <span>{{ news.author.name }}</span>
+                    </div>
+                    <img src="{{ news.card_image.url }}" alt="{{ news.title }}" />
+                    <h3 class="h4">{{ news.title }}</h3>
+                    <p class="excerpt">{{ news.excerpt.read_more('') }}</p>
+                    <p class="terms">
+                        {% for term in news.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    {# Featured World Cup Cricket Guides #}
+    <section class="post-block">
+        <div class="post-block__header">
+            <a class="post-block__header--link" href="/world-cup-cricket-guides">
+                <h2 class="h1">World Cup Cricket Guides</h2>
+            </a>
+
+            <a class="all-posts-link" href="/world-cup-cricket-guides">
                 See All <span class="fa-solid fa-arrow-right"></span>
             </a>
         </div>

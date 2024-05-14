@@ -39,6 +39,17 @@ class SanskarSite extends Timber\Site {
 			#wp-admin-bar-new-content #comments,
             .column-comments,
 			#adminmenu .update-plugins { display: none !important; }
+
+            /* add borders to help breakup post types */
+            #menu-posts-news {
+                border-top: 1px solid #fff !important;
+                margin-top: 16px !important;
+            }
+
+            #menu-posts-press-release {
+                border-bottom: 1px solid #fff !important;
+                margin-bottom: 16px !important;
+            }
 		</style>
 
         <?php
@@ -108,6 +119,16 @@ class SanskarSite extends Timber\Site {
         $context['options']         = get_fields('option');
         $context['get_url']         = $_SERVER['REQUEST_URI'];
 
+        // 6 featured sidebar contests - reused on home and cricket guide pages
+        $context['sidebar_contests'] = Timber::get_posts([
+            'post_type'      => 'contest',
+            'posts_per_page' => 6,
+            'meta_key'       => 'show_in_sidebar',
+            'meta_value'     => true,
+            'order'          => 'DESC',
+            'orderby'        => 'date'
+        ]);
+
 		return $context;
 	}
 
@@ -127,6 +148,13 @@ class SanskarSite extends Timber\Site {
                 'menu_slug'  => 'site-options',
                 'capability' => 'edit_posts',
                 'redirect'   => false
+			]);
+
+            // Sidebars
+			$child = acf_add_options_sub_page([
+				'page_title'  => __('Sidebars'),
+				'menu_title'  => __('Sidebars'),
+				'parent_slug' => $parent['menu_slug'],
 			]);
 
             // Menus
@@ -150,6 +178,7 @@ class SanskarSite extends Timber\Site {
         include_once( 'custom-post-types/post-type-news.php' );
 		include_once( 'custom-post-types/post-type-contest.php' );
         include_once( 'custom-post-types/post-type-playlist.php' );
+        include_once( 'custom-post-types/post-type-cricket-guide.php' );
         include_once( 'custom-post-types/post-type-event.php' );
         include_once( 'custom-post-types/post-type-press-release.php' );
 	}
@@ -219,7 +248,7 @@ function sks_yr_logon( $expirein ) {
 }
 add_filter( 'auth_cookie_expiration', 'sks_yr_logon' );
 
-// no autosave
+// no autosave (causes issues with ACF and prevents publish button from working)
 function disable_autosave() {
     wp_deregister_script( 'autosave' );
 }

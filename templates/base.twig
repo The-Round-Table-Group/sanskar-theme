@@ -55,6 +55,9 @@
         <header class="site-header">
             {% if is_front_page %}
                 {% include 'partials/home-header.twig' %}
+            {% elseif 'cricket-guides/' in get_url %}
+                {% block header %}
+                {% endblock %}
             {% else %}
                 <div class="site-header__post-text">
                     <h1>{{ post.title }}</h1>

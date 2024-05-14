@@ -54,6 +54,7 @@ $tax_labels = [
 $tax_args = [
 	'hierarchical' 	    => true,
 	'labels' 	    	=> $tax_labels,
+    'public'            => false,
 	'show_ui' 	    	=> true,
 	'show_admin_column' => true,
 	'has_archive'		=> false,

@@ -1,0 +1,86 @@
+{% extends 'base.twig' %}
+
+{% block header %}
+    <article class="site-header__featured-post cricket-guide-header">
+        {% for feature in new_york_main_feature %}
+            <a class="featured-post-wrapper" href="{{ feature.link }}">
+                <h1 class="featured-title">{{ feature.title }}</h1>
+                <div class="featured-content">
+                    <p class="paragraph">{{ feature.excerpt.read_more('') }}</p>
+                    <div class="info">
+                        <p><strong>Author:</strong> {{ feature.author.name }}</p>
+                        <p><strong>Date:</strong> {{ feature.date }}</p>
+                    </div>
+                </div>
+            </a>
+            <img src="{{ feature.thumbnail.src }}" alt="{{ feature.title }}" />
+        {% endfor %}
+    </article>
+{% endblock %}
+
+{% block content %}
+<section class="split-column align-center">
+    <div class="split-column__news">
+        {% for guide in new_york_guides %}
+            <div class="news-container">
+                <a class="image-link" href="{{ guide.link }}">
+                    <img class="news-image-desktop" src="{{ guide.card_image.url }}" alt="{{ guide.title }}" />
+                    <img class="news-image-mobile" src="{{ guide.thumbnail.src }}" alt="{{ guide.title }}" />
+                </a>
+
+                <div class="news-info">
+                    <a class="news-link" href="{{ guide.link }}">
+                        <h3 class="h5">{{ guide.title }}</h3>
+                    </a>
+
+                    <p class="excerpt">{{ guide.excerpt.read_more('') }}</p>
+
+                    <p>
+                        <span class="author-name"><strong>Author:</strong> {{ guide.author.name }}</span>
+                        <span class="news-date"><strong>Date:</strong> {{ guide.date }}</span>
+                    </p>
+
+                    <p class="tags"><strong>Tags:</strong>
+                        {% for term in guide.terms %}
+                            <span class="term">{{ term.name }}</span>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include '/templates/partials/sidebars/cricket-guides-sidebar.twig' %}
+</section>
+
+{# Dallas Guides #}
+{# <section class="post-block">
+    <div class="post-block__header">
+        <a class="post-block__header--link" href="/world-cup-cricket-guides">
+            <h2 class="h1">Dallas Guides</h2>
+        </a>
+
+        <a class="all-posts-link" href="/world-cup-cricket-guides">
+            See All <span class="fa-solid fa-arrow-right"></span>
+        </a>
+    </div>
+
+    <div class="post-block__post-row">
+        {% for guide in dallas_guides %}
+            <a class="post-card" href="{{ guide.link }}">
+                <div class="date-author">
+                    <time>{{ guide.date }}</time>
+                </div>
+                <img src="{{ guide.card_image.url }}" alt="{{ guide.title }}" />
+                <h3 class="h4">{{ guide.title }}</h3>
+                <p class="excerpt">{{ guide.excerpt.read_more('') }}</p>
+                <p class="terms">
+                    {% for term in guide.terms %}
+                        <span class="term">{{ term.name }}</span>
+                    {% endfor %}
+                </p>
+            </a>
+        {% endfor %}
+    </div>
+</section> #}
+{% endblock %}
