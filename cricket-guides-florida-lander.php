@@ -11,12 +11,15 @@ $context['florida_main_feature'] = Timber::get_posts([
     'post_status'    => 'publish',
     'order'          => 'DESC',
     'orderby'        => 'date',
-    'tax_query'      => [[
-        'taxonomy' => 'cricket-guide-tax',
-        'field'    => 'slug',
-        'terms'    => ['florida', 'main-feature'],
-        'operator' => 'IN',
-    ]]
+    'tax_query'      => [
+        'relation'   => 'AND',
+        [
+            'taxonomy' => 'cricket-guide-tax',
+            'field'    => 'slug',
+            'terms'    => ['florida', 'main-feature'],
+            'operator' => 'IN',
+        ]
+    ]
 ]);
 
 // Florida Guides
@@ -26,12 +29,15 @@ $context['florida_guides'] = Timber::get_posts([
     'post_status'    => 'publish',
     'order'          => 'DESC',
     'orderby'        => 'date',
-    'tax_query'      => [[
-        'taxonomy' => 'cricket-guide-tax',
-        'field'    => 'slug',
-        'terms'    => ['florida', 'featured'],
-        'operator' => 'IN',
-    ]]
+    'tax_query'      => [
+        'relation'   => 'AND',
+        [
+            'taxonomy' => 'cricket-guide-tax',
+            'field'    => 'slug',
+            'terms'    => ['florida', 'featured'],
+            'operator' => 'IN',
+        ]
+    ]
 ]);
 
 $templates = ['pages/cricket-guide-landers/florida-guides.twig'];

@@ -11,12 +11,15 @@ $context['dallas_main_feature'] = Timber::get_posts([
     'post_status'    => 'publish',
     'order'          => 'DESC',
     'orderby'        => 'date',
-    'tax_query'      => [[
-        'taxonomy' => 'cricket-guide-tax',
-        'field'    => 'slug',
-        'terms'    => ['dallas', 'main-feature'],
-        'operator' => 'IN',
-    ]]
+    'tax_query'      => [
+        'relation'   => 'AND',
+        [
+            'taxonomy' => 'cricket-guide-tax',
+            'field'    => 'slug',
+            'terms'    => ['dallas', 'main-feature'],
+            'operator' => 'IN',
+        ]
+    ]
 ]);
 
 // Dallas Guides
@@ -26,12 +29,15 @@ $context['dallas_guides'] = Timber::get_posts([
     'post_status'    => 'publish',
     'order'          => 'DESC',
     'orderby'        => 'date',
-    'tax_query'      => [[
-        'taxonomy' => 'cricket-guide-tax',
-        'field'    => 'slug',
-        'terms'    => ['dallas', 'featured'],
-        'operator' => 'IN',
-    ]]
+    'tax_query'      => [
+        'relation'   => 'AND',
+        [
+            'taxonomy' => 'cricket-guide-tax',
+            'field'    => 'slug',
+            'terms'    => ['dallas', 'featured'],
+            'operator' => 'IN',
+        ]
+    ]
 ]);
 
 $templates = ['pages/cricket-guide-landers/dallas-guides.twig'];
