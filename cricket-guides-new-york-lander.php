@@ -34,5 +34,16 @@ $context['new_york_guides'] = Timber::get_posts([
     ]]
 ]);
 
+// featured world cup articles
+$context['world_cup_news'] = Timber::get_posts([
+    'post_type'      => 'news',
+    'posts_per_page' => 3,
+    'tax_query'      => [[
+        'taxonomy' => 'news-tax',
+        'field'    => 'slug',
+        'terms'    => 'world-cup',
+    ]]
+]);
+
 $templates = ['pages/cricket-guide-landers/new-york-guides.twig'];
 Timber::render( $templates, $context );
