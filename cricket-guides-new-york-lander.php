@@ -11,15 +11,12 @@ $context['new_york_main_feature'] = Timber::get_posts([
     'post_status'    => 'publish',
     'order'          => 'DESC',
     'orderby'        => 'date',
-    'tax_query'      => [
-        'relation'   => 'AND',
-        [
-            'taxonomy' => 'cricket-guide-tax',
-            'field'    => 'slug',
-            'terms'    => ['new-york', 'main-feature'],
-            'operator' => 'IN',
-        ]
-    ]
+    'tax_query'      => [[
+        'taxonomy' => 'cricket-guide-tax',
+        'field'    => 'slug',
+        'terms'    => ['new-york', 'main-feature'],
+        'operator' => 'AND',
+    ]]
 ]);
 
 // New York Guides
@@ -29,15 +26,12 @@ $context['new_york_guides'] = Timber::get_posts([
     'post_status'    => 'publish',
     'order'          => 'DESC',
     'orderby'        => 'date',
-    'tax_query'      => [
-        'relation'   => 'AND',
-        [
-            'taxonomy' => 'cricket-guide-tax',
-            'field'    => 'slug',
-            'terms'    => ['new-york', 'featured'],
-            'operator' => 'IN',
-        ]
-    ]
+    'tax_query'      => [[
+        'taxonomy' => 'cricket-guide-tax',
+        'field'    => 'slug',
+        'terms'    => ['new-york', 'featured'],
+        'operator' => 'AND',
+    ]]
 ]);
 
 $templates = ['pages/cricket-guide-landers/new-york-guides.twig'];
