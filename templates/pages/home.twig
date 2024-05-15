@@ -131,34 +131,28 @@
     </section>
 
     {# Featured World Cup Cricket Guides #}
-    {# <section class="post-block">
+    <section class="post-block">
         <div class="post-block__header">
-            <a class="post-block__header--link" href="/world-cup-cricket-guides">
-                <h2 class="h1">World Cup Cricket Guides</h2>
-            </a>
-
-            <a class="all-posts-link" href="/world-cup-cricket-guides">
-                See All <span class="fa-solid fa-arrow-right"></span>
-            </a>
+            <h2 class="h1">World Cup Cricket Guides</h2>
         </div>
 
         <div class="post-block__post-row">
-            {% for news in world_cup_news %}
-                <a class="post-card" href="{{ news.link }}">
+            {% for guide in cricket_guides %}
+                <a class="post-card" href="{{ guide.link }}">
                     <div class="date-author">
-                        <time>{{ news.date }}</time>
-                        <span>{{ news.author.name }}</span>
+                        <time>{{ guide.date }}</time>
+                        <span>{{ guide.author.name }}</span>
                     </div>
-                    <img src="{{ news.card_image.url }}" alt="{{ news.title }}" />
-                    <h3 class="h4">{{ news.title }}</h3>
-                    <p class="excerpt">{{ news.excerpt.read_more('') }}</p>
+                    <img src="{{ guide.card_image.url }}" alt="{{ guide.title }}" />
+                    <h3 class="h4">{{ guide.title }}</h3>
+                    <p class="excerpt">{{ guide.excerpt.read_more('') }}</p>
                     <p class="terms">
-                        {% for term in news.terms %}
+                        {% for term in guide.terms %}
                             <span class="term">{{ term.name }}</span>
                         {% endfor %}
                     </p>
                 </a>
             {% endfor %}
         </div>
-    </section> #}
+    </section>
 {% endblock %}

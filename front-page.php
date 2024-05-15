@@ -70,5 +70,18 @@ $context['world_cup_news'] = Timber::get_posts([
     ]]
 ]);
 
+// featured world cup guides
+$context['cricket_guides'] = Timber::get_posts([
+    'post_type'      => 'cricket-guide',
+    'posts_per_page' => 3,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'tax_query'      => [[
+        'taxonomy' => 'cricket-guide-tax',
+        'field'    => 'slug',
+        'terms'    => 'home-feature',
+    ]]
+]);
+
 $templates = ['pages/home.twig'];
 Timber::render( $templates, $context );
