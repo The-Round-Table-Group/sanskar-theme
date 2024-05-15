@@ -73,9 +73,23 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf-options-sidebars"
+                "value": "cricket-guides-dallas-lander.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "cricket-guides-florida-lander.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "cricket-guides-new-york-lander.php"
             }
         ]
     ],
@@ -88,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715727538
+    "modified": 1715805677
 }

@@ -1,14 +1,48 @@
 <aside class="split-column__ads">
     <div class="promotion">
-        <h4>Featured Events</h4>
-        {% for promo in options.cricket_guide_promoted_events %}
-            <img src="{{ promo.promo_image.url }}" alt="Promotion" />
+        {% if 'south-florida-cricket-guides' in get_url %}
+            <h4>South Florida Events</h4>
+            {% for promo in post.cricket_guide_promoted_events %}
+                <img src="{{ promo.promo_image.url }}" alt="Promotion" />
 
-            <a class="primary-button--arrow" href="{{ promo.promo_link.url }}">
-                {{ promo.promo_link.title }}
-                <span class="fa-solid fa-arrow-right"></span>
-            </a>
-        {% endfor %}
+                <a
+                    class="primary-button--arrow"
+                    href="{{ promo.promo_link.url }}"
+                    target="{{ promo.promo_link.target ? '_blank' : '_self' }}"
+                >
+                    {{ promo.promo_link.title }}
+                    <span class="fa-solid fa-arrow-right"></span>
+                </a>
+            {% endfor %}
+        {% elseif 'dallas-cricket-guides' in get_url %}
+            <h4>Dallas Events</h4>
+            {% for promo in post.cricket_guide_promoted_events %}
+                <img src="{{ promo.promo_image.url }}" alt="Promotion" />
+
+                <a
+                    class="primary-button--arrow"
+                    href="{{ promo.promo_link.url }}"
+                    target="{{ promo.promo_link.target ? '_blank' : '_self' }}"
+                >
+                    {{ promo.promo_link.title }}
+                    <span class="fa-solid fa-arrow-right"></span>
+                </a>
+            {% endfor %}
+        {% elseif 'new-york-cricket-guides' in get_url %}
+            <h4>New York Events</h4>
+            {% for promo in post.cricket_guide_promoted_events %}
+                <img src="{{ promo.promo_image.url }}" alt="Promotion" />
+
+                <a
+                    class="primary-button--arrow"
+                    href="{{ promo.promo_link.url }}"
+                    target="{{ promo.promo_link.target ? '_blank' : '_self' }}"
+                >
+                    {{ promo.promo_link.title }}
+                    <span class="fa-solid fa-arrow-right"></span>
+                </a>
+            {% endfor %}
+        {% endif %}
     </div>
 
     <div class="contests">
