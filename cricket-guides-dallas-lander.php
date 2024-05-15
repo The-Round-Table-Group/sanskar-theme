@@ -14,7 +14,8 @@ $context['dallas_main_feature'] = Timber::get_posts([
     'tax_query'      => [[
         'taxonomy' => 'cricket-guide-tax',
         'field'    => 'slug',
-        'terms'    => ['dallas', 'main-feature']
+        'terms'    => ['dallas', 'main-feature'],
+        'operator' => 'IN',
     ]]
 ]);
 
@@ -28,7 +29,8 @@ $context['dallas_guides'] = Timber::get_posts([
     'tax_query'      => [[
         'taxonomy' => 'cricket-guide-tax',
         'field'    => 'slug',
-        'terms'    => ['dallas', 'featured']
+        'terms'    => ['dallas', 'featured'],
+        'operator' => 'IN',
     ]]
 ]);
 

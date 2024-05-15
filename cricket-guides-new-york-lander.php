@@ -14,7 +14,8 @@ $context['new_york_main_feature'] = Timber::get_posts([
     'tax_query'      => [[
         'taxonomy' => 'cricket-guide-tax',
         'field'    => 'slug',
-        'terms'    => ['new-york', 'main-feature']
+        'terms'    => ['new-york', 'main-feature'],
+        'operator' => 'IN',
     ]]
 ]);
 
@@ -28,7 +29,8 @@ $context['new_york_guides'] = Timber::get_posts([
     'tax_query'      => [[
         'taxonomy' => 'cricket-guide-tax',
         'field'    => 'slug',
-        'terms'    => ['new-york', 'featured']
+        'terms'    => ['new-york', 'featured'],
+        'operator' => 'IN',
     ]]
 ]);
 
