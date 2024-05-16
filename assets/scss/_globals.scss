@@ -57,3 +57,9 @@ a.term:hover {
     background-color: $blue;
     color: $white;
 }
+
+.wp-block-separator {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    border-top: 2px solid $blue;
+}

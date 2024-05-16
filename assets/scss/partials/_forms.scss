@@ -227,3 +227,37 @@
     font-family: $montserrat;
     font-size: 1.25rem;
 }
+
+.contest-template-default {
+    #gform_wrapper_1:not(.subscribe-block #gform_wrapper_1) {
+        .gfield_required { display: none !important; }
+
+        label {
+            font-size: 1.125rem;
+            font-weight: $semibold;
+            font-family: $montserrat;
+            color: $blue;
+        }
+
+        input:not(.gform_button) {
+            margin-bottom: 1.25rem;
+            padding: 0.65rem;
+            border: 1px solid $blue;
+        }
+
+        .gform_button {
+            padding: 0.65rem 1.25rem;
+            margin-top: 0.5rem;
+            font-weight: $regular;
+            background-color: $teal;
+            color: $white;
+            transition: $transition;
+
+            &:hover {
+                background-color: $blue;
+                transition: $transition;
+                cursor: pointer;
+            }
+        }
+    }
+}

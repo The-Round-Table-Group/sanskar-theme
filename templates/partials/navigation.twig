@@ -17,7 +17,25 @@
 
     <nav class="nav-wrapper__menu" aria-label="Main site navigation">
         {% for item in options.navigation %}
-            <a class="menu-link" href="{{ item.nav_link.url }}">{{ item.nav_link.title }}</a>
+            {% if not item.has_dropdown %}
+                <a
+                    class="menu-link"
+                    href="{{ item.nav_link.url }}"
+                >
+                    {{ item.nav_link.title }}
+                </a>
+            {% else %}
+                <div class="menu-link has-dropdown">
+                    {{ item.nav_link.title }}
+                    <div class="dropdown-menu">
+                        {% for subitem in item.submenu %}
+                            <a class="dropdown-menu__link" href="{{ subitem.sub_item_link.url }}">
+                                {{ subitem.sub_item_link.title }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
         {% endfor %}
     </nav>
 </section>
