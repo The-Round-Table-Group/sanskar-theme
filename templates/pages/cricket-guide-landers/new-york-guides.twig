@@ -13,7 +13,10 @@
                     </div>
                 </div>
             </a>
-            <img src="{{ feature.thumbnail.src }}" alt="{{ feature.title }}" />
+
+            <a href="{{ feature.link }}">
+                <img src="{{ feature.thumbnail.src }}" alt="{{ feature.title }}" />
+            </a>
         {% endfor %}
     </article>
 {% endblock %}
