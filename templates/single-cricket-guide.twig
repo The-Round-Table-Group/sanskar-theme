@@ -8,6 +8,20 @@
 
     {{ post.content }}
 
+    {% for term in post.terms('cricket-guide-tax') %}
+        {% if term.name == 'Dallas' or term.name == 'New York' %}
+            <a class="primary-button--arrow cricket-home-button" href="/{{ term.name|lower|replace({' ' : '-'}) }}-cricket-guides">
+                All Cricket Guides for {{ term.name }}
+                <span class="fa-solid fa-arrow-right"></span>
+            </a>
+        {% elseif term.name == 'Florida' %}
+            <a class="primary-button--arrow cricket-home-button" href="/south-{{term.name|lower}}-cricket-guides">
+                All Cricket Guides for South {{ term.name }}
+                <span class="fa-solid fa-arrow-right"></span>
+            </a>
+        {% endif %}
+    {% endfor %}
+
     <div class="share-bar">
         <p>Share on:</p>
         {{ fn('do_action', 'skv_post_intro') }}
