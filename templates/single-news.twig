@@ -13,6 +13,22 @@
         {{ fn('do_action', 'skv_post_intro') }}
     </div>
 
+    <div class="next-previous-posts">
+        {% if post.prev %}
+            <a class="post-nav" href="{{ post.prev.link }}">
+                <p><span class="prev-arrow fa-solid fa-arrow-right"></span> Previous</p>
+                <h5>{{ post.prev.title }}</h5>
+            </a>
+        {% endif %}
+
+        {% if post.next %}
+            <a class="post-nav" href="{{ post.next.link }}">
+                <p>Next <span class="next-arrow fa-solid fa-arrow-right"></span></p>
+                <h5>{{ post.next.title }}</h5>
+            </a>
+        {% endif %}
+    </div>
+
     <section class="author-block">
         <div class="author-block__info">
             <img src="{{ post.author.author_image.url }}" alt="{{ post.author.name }}" />

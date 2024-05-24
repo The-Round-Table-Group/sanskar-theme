@@ -38,7 +38,7 @@
 
     p a { white-space: nowrap; }
 
-    ol, ul { margin-top: -1.5rem; }
+    ol, ul { margin-top: -0.65rem; }
 
     .author-block {
         display: flex;
@@ -103,13 +103,98 @@
     }
 }
 
+// social share buttons
 .share-bar {
-    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 28rem;
+    margin-top: 5rem;
+    flex-wrap: wrap;
 
     p {
-        margin-bottom: 1.25rem;
+        width: 6rem;
+        margin-top: 0;
+        margin-bottom: 0;
         font-family: $oswald;
         font-size: 1.5rem;
         font-weight: $semibold;
+    }
+
+    .shared-counts-wrap {
+        flex-shrink: 0;
+        max-width: 20rem;
+        margin: 1rem auto 0;
+
+        @include mq(448px) {
+            margin: 0 auto;
+        }
+
+        .shared-counts-button {
+            margin-bottom: 0.5rem;
+            @include mq(xxs) { margin-bottom: 0; }
+        }
+    }
+}
+
+// next/back on posts
+.next-previous-posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba($blue, 0.2);
+
+    @include mq(660px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .post-nav {
+        width: 100%;
+        border: 1px solid $blue;
+        border-radius: $radius-small;
+        padding: 1.5rem;
+        &:first-of-type { margin-bottom: 2rem; }
+
+        @include mq(660px) {
+            width: 48%;
+            &:first-of-type { margin-bottom: 0; }
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: $teal;
+            border-color: $teal;
+
+            h5, p, .fa-solid { color: $white; }
+        }
+
+        .prev-arrow,
+        .next-arrow {
+            display: inline-block;
+            position: relative;
+        }
+
+        .prev-arrow {
+            margin-right: 0.3rem;
+            transform: rotate(180deg);
+        }
+
+        .next-arrow { margin-left: 0.3rem; }
+    }
+
+    h5 {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+
+    p {
+        margin-top: 0;
+        &:last-of-type { margin-bottom: 0; }
     }
 }
