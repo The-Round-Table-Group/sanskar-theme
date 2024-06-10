@@ -20,6 +20,20 @@
     &__news {
         max-width: 55rem;
 
+        &--header {
+            .h1 {
+                margin-top: 0;
+                margin-bottom: 1.85rem;
+                transition: $transition;
+                @include mq(sm) { margin-bottom: 3.65rem; }
+
+                &:hover {
+                    transition: $transition;
+                    color: $teal;
+                }
+            }
+        }
+
         .news-container {
             display: flex;
             flex-direction: column;

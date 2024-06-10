@@ -2,7 +2,7 @@
 
 {% block content %}
     {# Featured Contests #}
-    <section class="post-block">
+    {# <section class="post-block">
         <div class="post-block__header">
             <a class="post-block__header--link" href="/contests">
                 <h2 class="h1">Featured Contests</h2>
@@ -30,38 +30,44 @@
                 </a>
             {% endfor %}
         </div>
-    </section>
+    </section> #}
 
     {# Featured News and Ads #}
     <section class="split-column align-center">
         <div class="split-column__news">
-            {% for news_post in news %}
-                <div class="news-container">
-                    <a class="image-link" href="{{ news_post.link }}">
-                        <img class="news-image-desktop" src="{{ news_post.card_image.url }}" alt="{{ news_post.title }}" />
-                        <img class="news-image-mobile" src="{{ news_post.thumbnail.src }}" alt="{{ news_post.title }}" />
-                    </a>
+            <div>
+                <a class="split-column__news--header" href="/news">
+                    <h2 class="h1">Featured News</h2>
+                </a>
 
-                    <div class="news-info">
-                        <a class="news-link" href="{{ news_post.link }}">
-                            <h3 class="h5">{{ news_post.title }}</h3>
+                {% for news_post in news %}
+                    <div class="news-container">
+                        <a class="image-link" href="{{ news_post.link }}">
+                            <img class="news-image-desktop" src="{{ news_post.card_image.url }}" alt="{{ news_post.title }}" />
+                            <img class="news-image-mobile" src="{{ news_post.thumbnail.src }}" alt="{{ news_post.title }}" />
                         </a>
 
-                        <p class="excerpt">{{ news_post.excerpt.read_more('') }}</p>
+                        <div class="news-info">
+                            <a class="news-link" href="{{ news_post.link }}">
+                                <h3 class="h5">{{ news_post.title }}</h3>
+                            </a>
 
-                        <p>
-                            <span class="author-name"><strong>Author:</strong> {{ news_post.author.name }}</span>
-                            <span class="news-date"><strong>Date:</strong> {{ news_post.date }}</span>
-                        </p>
+                            <p class="excerpt">{{ news_post.excerpt.read_more('') }}</p>
 
-                        <p class="tags"><strong>Tags:</strong>
-                            {% for term in news_post.terms %}
-                                <a class="term" href="news/?_news_tag={{ term.slug }}">{{ term.name }}</a>
-                            {% endfor %}
-                        </p>
+                            <p>
+                                <span class="author-name"><strong>Author:</strong> {{ news_post.author.name }}</span>
+                                <span class="news-date"><strong>Date:</strong> {{ news_post.date }}</span>
+                            </p>
+
+                            <p class="tags"><strong>Tags:</strong>
+                                {% for term in news_post.terms %}
+                                    <a class="term" href="news/?_news_tag={{ term.slug }}">{{ term.name }}</a>
+                                {% endfor %}
+                            </p>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
 
         {% include '/templates/partials/sidebars/sidebar.twig' %}
