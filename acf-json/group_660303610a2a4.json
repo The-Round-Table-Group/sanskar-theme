@@ -122,6 +122,11 @@
                 "param": "post_type",
                 "operator": "!=",
                 "value": "page"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "contest"
             }
         ]
     ],
@@ -134,5 +139,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712161103
+    "modified": 1721920470
 }

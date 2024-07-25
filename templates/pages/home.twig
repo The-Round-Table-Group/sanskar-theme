@@ -104,56 +104,29 @@
         </div>
     </section>
 
-    {# Featured World Cup Cricket News #}
+    {# Featured Contests #}
     <section class="post-block">
         <div class="post-block__header">
-            <a class="post-block__header--link" href="/news/?_news_tag=cricket">
-                <h2 class="h1">World Cup Cricket News</h2>
+            <a class="post-block__header--link" href="/playlists">
+                <h2 class="h1">Featured Contests</h2>
             </a>
 
-            <a class="all-posts-link" href="/news/?_news_tag=cricket">
+            <a class="all-posts-link" href="/playlists">
                 See All <span class="fa-solid fa-arrow-right"></span>
             </a>
         </div>
 
         <div class="post-block__post-row">
-            {% for news in world_cup_news %}
-                <a class="post-card" href="{{ news.link }}">
+            {% for contest in featured_contests %}
+                <a class="post-card" href="{{ contest.link }}">
                     <div class="date-author">
-                        <time>{{ news.date }}</time>
-                        <span>{{ news.author.name }}</span>
+                        <time>{{ contest.date }}</time>
                     </div>
-                    <img src="{{ news.card_image.url }}" alt="{{ news.title }}" />
-                    <h3 class="h4">{{ news.title }}</h3>
-                    <p class="excerpt">{{ news.excerpt.read_more('') }}</p>
+                    <img src="{{ contest.card_image.url }}" alt="{{ contest.title }}" />
+                    <h3 class="h4">{{ contest.title }}</h3>
+                    <p class="excerpt">{{ contest.excerpt.read_more('') }}</p>
                     <p class="terms">
-                        {% for term in news.terms %}
-                            <span class="term">{{ term.name }}</span>
-                        {% endfor %}
-                    </p>
-                </a>
-            {% endfor %}
-        </div>
-    </section>
-
-    {# Featured World Cup Cricket Guides #}
-    <section class="post-block">
-        <div class="post-block__header">
-            <h2 class="h1">World Cup Cricket Guides</h2>
-        </div>
-
-        <div class="post-block__post-row">
-            {% for guide in cricket_guides %}
-                <a class="post-card" href="{{ guide.link }}">
-                    <div class="date-author">
-                        <time>{{ guide.date }}</time>
-                        <span>{{ guide.author.name }}</span>
-                    </div>
-                    <img src="{{ guide.card_image.url }}" alt="{{ guide.title }}" />
-                    <h3 class="h4">{{ guide.title }}</h3>
-                    <p class="excerpt">{{ guide.excerpt.read_more('') }}</p>
-                    <p class="terms">
-                        {% for term in guide.terms %}
+                        {% for term in contest.terms %}
                             <span class="term">{{ term.name }}</span>
                         {% endfor %}
                     </p>
