@@ -123,8 +123,6 @@ class SanskarSite extends Timber\Site {
         $context['sidebar_contests'] = Timber::get_posts([
             'post_type'      => 'contest',
             'posts_per_page' => 6,
-            'meta_key'       => 'sidebar_display',
-            'meta_value'     => true,
             'order'          => 'DESC',
             'orderby'        => 'date',
             'tax_query'      => [[
