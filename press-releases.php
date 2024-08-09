@@ -1,6 +1,6 @@
 <?php
 // Template Name: Press Releases Archive Template
-$context = Timber::get_context();
+$context = Timber::context();
 $post = Timber::get_post();
 $context['post'] = $post;
 

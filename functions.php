@@ -23,7 +23,7 @@ class SanskarSite extends Timber\Site {
 
 		// Filter Hooks //
         add_filter( 'block_categories', [ $this, 'skv_block_category' ], 10, 2 );
-		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
+		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
 
 		parent::__construct();
@@ -51,18 +51,7 @@ class SanskarSite extends Timber\Site {
                 margin-bottom: 16px !important;
             }
 		</style>
-
         <?php
-        // check for Shane(1) or Nam(4) to publish post
-        $uid = get_current_user_id();
-        if ( $uid != 1 && $uid != 4 ) { ?>
-            <style type="text/css">
-                .editor-post-publish-button__button {
-                    display: none !important;
-                }
-            </style>
-        <?php
-        }
 	}
 
 	// enqueue styles & scripts
@@ -244,12 +233,6 @@ function setup_form_args( $form_args ) {
     return $form_args;
 }
 add_filter( 'gform_form_args', 'setup_form_args' );
-
-// prevent logout
-function sks_yr_logon( $expirein ) {
-    return 31556926;
-}
-add_filter( 'auth_cookie_expiration', 'sks_yr_logon' );
 
 // no autosave (causes issues with ACF and prevents publish button from working)
 function disable_autosave() {

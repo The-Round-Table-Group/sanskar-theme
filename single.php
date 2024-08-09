@@ -1,6 +1,6 @@
 <?php
 // Global Custom Post Type Controller
-$context = Timber::get_context();
+$context = Timber::context();
 $post = Timber::get_post();
 $context['post'] = $post;
 the_post();
