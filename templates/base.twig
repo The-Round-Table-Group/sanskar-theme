@@ -8,13 +8,6 @@
 
 		<title>{{ post.title }} | {{ site.name }}</title>
 
-        {# Termly blocker (opt-out by default) #}
-        <script type="text/javascript"
-            src="https://app.termly.io/resource-blocker/0b979665-fc42-4ffa-b244-4ed7105067ae?autoBlock=on"
-        ></script>
-
-		{{ fn('wp_head') }}
-
         {# Open Graph Data #}
         <meta property="og:title" content="{{ post.title }}" />
         <meta property="og:locale" content="en_US.utf-8" />
@@ -34,6 +27,13 @@
             <meta name="description" content="{{ options.global_seo_description }}" />
             <meta property="og:description" content="{{ options.global_seo_description }}" />
         {% endif %}
+
+        {# Termly cookie blocker (opt-out by default) #}
+        <script type="text/javascript"
+            src="https://app.termly.io/resource-blocker/0b979665-fc42-4ffa-b244-4ed7105067ae?autoBlock=on"
+        ></script>
+
+		{{ fn('wp_head') }}
 
         {# News links may appear on multiple pages #}
         {% if fn('is_single', 'news') %}
